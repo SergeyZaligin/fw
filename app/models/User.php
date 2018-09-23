@@ -75,7 +75,7 @@ class User extends AppModel
         $user = $this->db->query("SELECT * FROM user WHERE login=:login LIMIT 1", [
             'login' => $login
         ], \PDO::FETCH_CLASS);
-        return $user[0];
+        return $user[0]->password;
     }
 
 
@@ -87,7 +87,7 @@ class User extends AppModel
         if ($login && $password) {
             $query = $this->db->query("SELECT * FROM user WHERE login=:login LIMIT 1", [
             'login' => $login
-        ]);
+        ],\PDO::FETCH_CLASS);
 //debug($user);
 //die;
 //            //$user = R::findOne('user', 'login = ? LIMIT 1', [$login]);
