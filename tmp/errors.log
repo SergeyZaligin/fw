@@ -172,4 +172,24 @@
  ================= 
  [2018-09-23 15:03:05] | Текст ошибки: Class 'engine\base\R' not found | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/Model.php | Строка 78
  ================= 
+ [2018-09-23 16:06:44] | Текст ошибки: Не найден вид /opt/lampp/htdocs/fw.loc/app/views/User/logout.php | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 100
+ ================= 
+ [2018-09-23 16:06:45] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 66
+ ================= 
+ [2018-09-23 16:06:47] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 66
+ ================= 
+ [2018-09-23 16:09:12] | Текст ошибки: Не найден вид /opt/lampp/htdocs/fw.loc/app/views/User/logout.php | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 100
+ ================= 
+ [2018-09-23 16:13:45] | Текст ошибки: Не найден вид /opt/lampp/htdocs/fw.loc/app/views/User/logout.php | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 100
+ ================= 
+ [2018-09-23 16:15:51] | Текст ошибки: Не найден вид /opt/lampp/htdocs/fw.loc/app/views/User/logout.php | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 100
+ ================= 
+ [2018-09-23 16:56:20] | Текст ошибки: Не найден вид /opt/lampp/htdocs/fw.loc/app/views/User/logout.php | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 100
+ ================= 
+ [2018-09-23 16:56:33] | Текст ошибки: Не найден вид /opt/lampp/htdocs/fw.loc/app/views/User/logout.php | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 100
+ ================= 
+ [2018-09-23 16:56:38] | Текст ошибки: Не найден вид /opt/lampp/htdocs/fw.loc/app/views/User/logout.php | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 100
+ ================= 
+ [2018-09-23 16:57:40] | Текст ошибки: Не найден вид /opt/lampp/htdocs/fw.loc/app/views/User/logout.php | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 100
+ ================= 
  

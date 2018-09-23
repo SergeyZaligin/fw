@@ -42,6 +42,8 @@ class UserController extends AppController
     {
         if (!empty($_POST) && isset($_POST)) {
             $userModel = new User();
+//            debug($userModel->login());
+//            die;
             if ($userModel->login()) {
                 $_SESSION['validate_success'] = 'Вы вошли на сайт!';
             } else {
