@@ -3,7 +3,7 @@
 namespace engine\base;
 
 use engine\Database;
-use Valitron\Validator;
+
 
 /**
  * Class Model
@@ -36,7 +36,8 @@ abstract class Model
      */
     public function __construct() 
     {
-        Database::instance();
+        $settings = require CONF . '/config_db.php';
+        new Database($settings);
     }
     
     /**
@@ -61,15 +62,15 @@ abstract class Model
      */
     public function validate(array $data): bool 
     {
-        $v = new Validator($data);
-        $v->rules($this->rules);
-        if ($v->validate()) {
-            $_SESSION['validate_success'] = 'Вы успешно зарегистроированы!';
-            return true;
-        } else {
-           $this->errors = $v->errors();
-           return false;
-        }
+//        $v = new Validator($data);
+//        $v->rules($this->rules);
+//        if ($v->validate()) {
+//            $_SESSION['validate_success'] = 'Вы успешно зарегистроированы!';
+//            return true;
+//        } else {
+//           $this->errors = $v->errors();
+//           return false;
+//        }
     }
     
     /**

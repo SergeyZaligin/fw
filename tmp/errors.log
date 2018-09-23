@@ -126,4 +126,10 @@
  ================= 
  [2018-09-23 11:28:08] | Текст ошибки: Return value of engine\libs\Pagination::getCountPages() must be of the type integer, float returned | Файл /opt/lampp/htdocs/wtcms.loc/engine/core/libs/Pagination.php | Строка 97
  ================= 
+ [2018-09-23 12:02:23] | Текст ошибки: Call to undefined method engine\Database::instance() | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/Model.php | Строка 39
+ ================= 
+ [2018-09-23 12:02:24] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 66
+ ================= 
+ [2018-09-23 12:26:31] | Текст ошибки: Too few arguments to function engine\Database::__construct(), 0 passed in /opt/lampp/htdocs/fw.loc/engine/core/base/Model.php on line 39 and exactly 1 expected | Файл /opt/lampp/htdocs/fw.loc/engine/core/Database.php | Строка 52
+ ================= 
  

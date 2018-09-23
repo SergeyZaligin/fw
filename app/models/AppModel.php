@@ -1,7 +1,9 @@
 <?php
 
 namespace app\models;
+
 use engine\base\Model;
+
 /**
  * Description of AppModel
  *
