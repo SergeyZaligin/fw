@@ -160,4 +160,8 @@
  ================= 
  [2018-09-23 14:02:50] | Текст ошибки: Return value of engine\base\Model::validate() must be of the type boolean, none returned | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/Model.php | Строка 75
  ================= 
+ [2018-09-23 14:16:39] | Текст ошибки: Call to undefined method engine\libs\Validator::validate() | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/Model.php | Строка 68
+ ================= 
+ [2018-09-23 14:18:22] | Текст ошибки: Call to undefined method engine\libs\Validator::errors() | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/Model.php | Строка 72
+ ================= 
  

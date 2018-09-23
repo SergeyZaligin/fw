@@ -9,10 +9,23 @@ namespace engine\libs;
  */
 class Validator 
 {
-    public $data;
+    public $data = [];
+    private $validate = true;
+    public $errors = [];
 
     public function __construct($data) 
     {
         $this->data = $data;
+        debug($this->data);
+    }
+    
+    public function validate() 
+    {
+        return $this->validate;
+    }
+    
+    public function errors() 
+    {
+        
     }
 }

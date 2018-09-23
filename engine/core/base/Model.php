@@ -64,7 +64,7 @@ abstract class Model
     public function validate(array $data): bool 
     {
         $v = new Validator($data);
-        $v->rules($this->rules);
+        //$v->rules($this->rules);
         if ($v->validate()) {
             $_SESSION['validate_success'] = 'Вы успешно зарегистроированы!';
             return true;
