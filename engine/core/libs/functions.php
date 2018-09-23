@@ -12,11 +12,6 @@ function debug($param)
     echo '</pre>';
 }
 
-/**
- * Function redirect
- * 
- * @param string $http
- */
 function redirect ($http = false) 
 {
     if ($http) {
@@ -26,4 +21,9 @@ function redirect ($http = false)
     }
     header("Location: {$redirect}");
     exit;
+}
+
+function h($str) 
+{
+    return htmlspecialchars($str, ENT_QUOTES);
 }

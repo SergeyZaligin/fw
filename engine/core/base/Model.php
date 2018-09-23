@@ -3,7 +3,7 @@
 namespace engine\base;
 
 use engine\Database;
-
+use engine\libs\Validator;
 
 /**
  * Class Model
@@ -63,15 +63,15 @@ abstract class Model
      */
     public function validate(array $data): bool 
     {
-//        $v = new Validator($data);
-//        $v->rules($this->rules);
-//        if ($v->validate()) {
-//            $_SESSION['validate_success'] = 'Вы успешно зарегистроированы!';
-//            return true;
-//        } else {
-//           $this->errors = $v->errors();
-//           return false;
-//        }
+        $v = new Validator($data);
+        $v->rules($this->rules);
+        if ($v->validate()) {
+            $_SESSION['validate_success'] = 'Вы успешно зарегистроированы!';
+            return true;
+        } else {
+           $this->errors = $v->errors();
+           return false;
+        }
     }
     
     /**

@@ -19,6 +19,7 @@ class UserController extends AppController
             $userModel = new User();
             $data = $_POST;
             $userModel->load($data);
+            debug($userModel->attributes);
             if (!$userModel->validate($data)) {
                 $userModel->getErrors();
                 redirect();
