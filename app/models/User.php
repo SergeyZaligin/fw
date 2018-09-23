@@ -70,18 +70,28 @@ class User extends AppModel
         }
     }
     
-    public function login() 
+    public function checkSql($login) 
+    {
+        $user = $this->db->query("SELECT * FROM user WHERE login=:login LIMIT 1", [
+            'login' => $login
+        ], \PDO::FETCH_CLASS);
+        return $user[0];
+    }
+
+
+    public function login($login) 
     {
         $login = !empty(trim($_POST['login'])) ? trim($_POST['login']) : null;
         $password = !empty(trim($_POST['password'])) ? trim($_POST['password']) : null;
 
         if ($login && $password) {
-            $user = $this->db->query("SELECT * FROM user WHERE login=:login LIMIT 1", [
-            'login' => $this->attributes['login']
+            $query = $this->db->query("SELECT * FROM user WHERE login=:login LIMIT 1", [
+            'login' => $login
         ]);
 //debug($user);
 //die;
 //            //$user = R::findOne('user', 'login = ? LIMIT 1', [$login]);
+            $user = $query[0];
             if ($user) {
                 if (password_verify($password, $user->password)) {
                     foreach ($user as $key => $value) {

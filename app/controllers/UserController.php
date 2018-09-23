@@ -42,9 +42,10 @@ class UserController extends AppController
     {
         if (!empty($_POST) && isset($_POST)) {
             $userModel = new User();
-//            debug($userModel->login());
-//            die;
-            if ($userModel->login()) {
+            //$userModel->checkSql();
+            //debug($userModel->checkSql($_POST['login']));
+            //die;
+            if ($userModel->login($_POST['login'])) {
                 $_SESSION['validate_success'] = 'Вы вошли на сайт!';
             } else {
                 $_SESSION['validate_errors'] = 'Логин или пароль введены не верно!';
