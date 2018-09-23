@@ -36,12 +36,27 @@ class User extends AppModel
         ]
     ];
     
+    public function insert($name, $login, $email, $password) 
+    {
+        return $this->db->query(
+        "INSERT INTO user (name, login, email, password) VALUES (:name, :login, :email, :password)", [
+            'name' => $name,
+            'login' => $login,
+            'email' => $email,
+            'password' => $password,
+        ]);
+    }
+    
     public function checkUnique() 
     {
-        $user = R::findOne('user', 'login = ? OR email = ? LIMIT 1', [
-            $this->attributes['login'],
-            $this->attributes['email']
-        ]);
+        $user = $this->db->query("SELECT * FROM user WHERE login=:login OR email=:email", [
+            'login' => $this->attributes['login'],
+            'email' => $this->attributes['email']
+        ], \PDO::FETCH_CLASS);
+//        $user = R::findOne('user', 'login = ? OR email = ? LIMIT 1', [
+//            $this->attributes['login'],
+//            $this->attributes['email']
+//        ]);
         if (!empty($user)) {
             if ($this->attributes['login'] === $user->login) {
                 $this->errors['unique'][] = "Логин {$user->login} занят!";
@@ -61,7 +76,10 @@ class User extends AppModel
         $password = !empty(trim($_POST['password'])) ? trim($_POST['password']) : null;
 
         if ($login && $password) {
-            $user = R::findOne('user', 'login = ? LIMIT 1', [$login]);
+            $user = $this->db->query("SELECT * FROM user WHERE login=:login LIMIT 1", [
+            'login' => $this->attributes['login']
+        ], \PDO::FETCH_CLASS);
+            //$user = R::findOne('user', 'login = ? LIMIT 1', [$login]);
             if ($user) {
                 if (password_verify($password, $user->password)) {
                     foreach ($user as $key => $value) {

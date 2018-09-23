@@ -3,8 +3,7 @@
 namespace engine\base;
 
 use engine\Database;
-use Valitron\Validator;
-
+use Valitron\Validator as V;
 /**
  * Class Model
  *
@@ -55,24 +54,29 @@ abstract class Model
         }
     }
     
-    /**
-     * Validation data
-     * 
-     * @param array $data
-     * @return boolean
-     */
-    public function validate(array $data): bool 
+    public function validate($data) 
     {
-        $v = new Validator($data);
+        V::lang('ru');
+        $v = new V($data);
         $v->rules($this->rules);
         if ($v->validate()) {
-            $_SESSION['validate_success'] = 'Вы успешно зарегистроированы!';
             return true;
         } else {
            $this->errors = $v->errors();
            return false;
         }
     }
+    
+//    public function save($table) 
+//    {
+//        $tbl = $this->db->query("SELECT * FROM {$table}", [], \PDO::FETCH_CLASS);
+//         
+//        foreach ($this->attributes as $name => $value) {
+//            $tbl[0]->$name = $value;
+//        }
+//        return $tbl;
+//        return R::store($tbl);
+//    }
     
     /**
      * Get all errors
