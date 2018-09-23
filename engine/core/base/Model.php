@@ -31,13 +31,14 @@ abstract class Model
      */
     public $rules = [];
     
+    public $db;
     /**
      * Constructor Model
      */
     public function __construct() 
     {
         $settings = require CONF . '/config_db.php';
-        new Database($settings);
+        $this->db = new Database($settings);
     }
     
     /**

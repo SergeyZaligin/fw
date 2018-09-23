@@ -132,4 +132,30 @@
  ================= 
  [2018-09-23 12:26:31] | Текст ошибки: Too few arguments to function engine\Database::__construct(), 0 passed in /opt/lampp/htdocs/fw.loc/engine/core/base/Model.php on line 39 and exactly 1 expected | Файл /opt/lampp/htdocs/fw.loc/engine/core/Database.php | Строка 52
  ================= 
+ [2018-09-23 12:33:38] | Текст ошибки: Too few arguments to function engine\Database::__construct(), 0 passed in /opt/lampp/htdocs/fw.loc/app/controllers/MainController.php on line 26 and exactly 1 expected | Файл /opt/lampp/htdocs/fw.loc/engine/core/Database.php | Строка 52
+ ================= 
+ [2018-09-23 12:34:54] | Текст ошибки: Call to a member function query() on null | Файл /opt/lampp/htdocs/fw.loc/app/controllers/MainController.php | Строка 27
+ ================= 
+ [2018-09-23 12:35:26] | Текст ошибки: Call to a member function query() on null | Файл /opt/lampp/htdocs/fw.loc/app/controllers/MainController.php | Строка 27
+ ================= 
+ [2018-09-23 12:41:44] | Текст ошибки: Call to a member function query() on null | Файл /opt/lampp/htdocs/fw.loc/app/controllers/MainController.php | Строка 27
+ ================= 
+ [2018-09-23 12:44:40] | Текст ошибки: Call to undefined method app\models\User::query() | Файл /opt/lampp/htdocs/fw.loc/app/controllers/MainController.php | Строка 27
+ ================= 
+ [2018-09-23 12:45:22] | Текст ошибки: Call to undefined method app\models\User::query() | Файл /opt/lampp/htdocs/fw.loc/app/controllers/MainController.php | Строка 27
+ ================= 
+ [2018-09-23 13:12:30] | Текст ошибки: Return value of app\models\Post::count() must be of the type integer, array returned | Файл /opt/lampp/htdocs/fw.loc/app/models/Post.php | Строка 20
+ ================= 
+ [2018-09-23 13:12:54] | Текст ошибки: Undefined class constant 'FETCH_ROW' | Файл /opt/lampp/htdocs/fw.loc/app/models/Post.php | Строка 20
+ ================= 
+ [2018-09-23 13:17:00] | Текст ошибки: Call to a member function fetchColumn() on array | Файл /opt/lampp/htdocs/fw.loc/app/models/Post.php | Строка 20
+ ================= 
+ [2018-09-23 13:17:28] | Текст ошибки: Call to a member function fetchColumn() on array | Файл /opt/lampp/htdocs/fw.loc/app/models/Post.php | Строка 20
+ ================= 
+ [2018-09-23 13:17:45] | Текст ошибки: Call to a member function fetchColumn() on array | Файл /opt/lampp/htdocs/fw.loc/app/models/Post.php | Строка 20
+ ================= 
+ [2018-09-23 13:17:59] | Текст ошибки: Call to a member function fetchColumn() on array | Файл /opt/lampp/htdocs/fw.loc/app/models/Post.php | Строка 20
+ ================= 
+ [2018-09-23 13:18:28] | Текст ошибки: Call to a member function fetch() on array | Файл /opt/lampp/htdocs/fw.loc/app/models/Post.php | Строка 20
+ ================= 
  

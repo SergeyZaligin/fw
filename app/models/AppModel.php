@@ -12,4 +12,8 @@ use engine\base\Model;
 class AppModel extends Model
 {
     
+    public function __construct() 
+    {
+        parent::__construct();
+    }
 }
