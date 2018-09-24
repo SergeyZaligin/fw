@@ -13,7 +13,7 @@ class Post extends AppModel
     public function getAll($start, $perPage) 
     {
         return $this->db->query("SELECT * FROM test LIMIT :start, :perPage", [
-            'start' => $start, 
+            'start' => $start,
             'perPage' => $perPage
         ], \PDO::FETCH_CLASS);
     }
