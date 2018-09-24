@@ -20,19 +20,7 @@
         </header>
         <main class="main">
             <div class="container">
-              
-                <h3>Default</h3>
                 <?=$content; ?>
-    
-                <?php if (isset($_SESSION['validate_errors'])): ?>
-                <div class="errors-validate">
-                    <?=$_SESSION['validate_errors']; unset($_SESSION['validate_errors']); ?>
-                </div>
-                <?php  elseif (isset($_SESSION['validate_success'])) : ?>
-                <div class="success-validate"><?=$_SESSION['validate_success']; unset($_SESSION['validate_success']); ?></div>
-                <?php endif; ?>
-
-                
             </div>
         </main>
         <footer class="footer">
