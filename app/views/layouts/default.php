@@ -29,14 +29,7 @@
         </header>
         <main class="main">
             <div class="container">
-                   <style>
-        .errors-validate {
-            color: red;
-        }
-        .success-validate{
-            color: green;
-        }
-    </style>
+              
     <h3>Default</h3>
     <?=$content; ?>
     
