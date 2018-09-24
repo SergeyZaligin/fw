@@ -2,7 +2,7 @@
 
 namespace app\controllers\admin;
 
-use wcms\base\Controller; 
+use engine\base\Controller; 
 use app\models\AppModel;
 
 /**

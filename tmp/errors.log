@@ -192,4 +192,6 @@
  ================= 
  [2018-09-23 16:57:40] | Текст ошибки: Не найден вид /opt/lampp/htdocs/fw.loc/app/views/User/logout.php | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 100
  ================= 
+ [2018-09-24 08:27:50] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 66
+ ================= 
  
