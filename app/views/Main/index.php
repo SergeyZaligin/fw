@@ -11,6 +11,8 @@
 <p>Empty!!!</p>
 <?php endif; ?>
 
+<?php new \app\widgets\menu\MenuCategory(); ?>
+
 <script src="/public/js/test.js"></script>
 <script>
     $(document).ready(function(){
@@ -28,4 +30,5 @@
             });
         });
     });
+    
 </script>

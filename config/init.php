@@ -8,6 +8,7 @@ define("CORE",  ROOT . '/engine/core');
 define("LIBS",  ROOT . '/engine/core/libs');
 define("CACHE", ROOT . '/tmp/cache');
 define("CONF",  ROOT . '/config');
+define("WIDGETS", ROOT . '/app/widgets');
 define("LAYOUT", 'default');
 
 

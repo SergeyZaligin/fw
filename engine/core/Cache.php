@@ -37,7 +37,7 @@ class Cache
      * @param string $key
      * @return boolean
      */
-    public function get($key): bool
+    public function get($key)
     {
         $file = CACHE . '/' . md5($key) . '.txt';
         if (file_exists($file)) {
