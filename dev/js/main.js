@@ -1,1 +1,1 @@
-console.log('main script start');
+//$('my-menu').dcAccordion();

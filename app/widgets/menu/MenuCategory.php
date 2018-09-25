@@ -34,7 +34,7 @@ class MenuCategory
 
     protected function output(){
         echo "<{$this->container} class='{$this->class}'>";
-            echo (string)$this->menuHtml;
+            echo $this->menuHtml;
         echo "</{$this->container}>";
     }
 
@@ -50,7 +50,7 @@ class MenuCategory
             $this->data = $data;
             
             $this->tree = $this->getTree();
-            //debug($this->tree);
+            //debug($this->data);
             //die;
             $this->menuHtml = $this->getMenuHtml($this->tree);
             $cache->set($this->cacheKey, $this->menuHtml, $this->cache);
@@ -81,7 +81,7 @@ class MenuCategory
 
     protected function catToTemplate($category, $tab, $id){
         ob_start();
-        require $this->tpl;
+        include WIDGETS . '/menu/menu_tpl/menu.php';
         return ob_get_clean();
     }
 

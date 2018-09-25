@@ -11,9 +11,15 @@
 <p>Empty!!!</p>
 <?php endif; ?>
 
-<?php new \app\widgets\menu\MenuCategory(); ?>
+<?php new \app\widgets\menu\MenuCategory([
+        'tpl' => WIDGETS . '/menu/my_menu.php',
+        'container' => 'ul',
+        'class' => 'my-menu',
+        'table' => 'categories',
+        'cache' => 60,
+        'cacheKey' => 'menu_ul',
+        ]); ?>
 
-<script src="/public/js/test.js"></script>
 <script>
     $(document).ready(function(){
         $('#send').on('click', function () {
