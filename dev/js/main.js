@@ -1,1 +1,3 @@
-//$('my-menu').dcAccordion();
+$(document).ready(function(){
+  $(".my-menu").dcAccordion();
+});

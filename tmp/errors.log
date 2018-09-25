@@ -246,4 +246,10 @@
  ================= 
  [2018-09-25 11:11:01] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 66
  ================= 
+ [2018-09-25 11:40:43] | Текст ошибки: Call to undefined method app\widgets\menu\MenuCategory::output() | Файл E:\OSPanel\domains\fw.loc\app\widgets\menu\MenuCategory.php | Строка 58
+ ================= 
+ [2018-09-25 11:41:01] | Текст ошибки: Call to undefined method app\widgets\menu\MenuCategory::output() | Файл E:\OSPanel\domains\fw.loc\app\widgets\menu\MenuCategory.php | Строка 58
+ ================= 
+ [2018-09-25 11:41:35] | Текст ошибки: Too few arguments to function app\widgets\menu\MenuCategory::catToTemplate(), 0 passed in E:\OSPanel\domains\fw.loc\app\widgets\menu\MenuCategory.php on line 58 and exactly 3 expected | Файл E:\OSPanel\domains\fw.loc\app\widgets\menu\MenuCategory.php | Строка 82
+ ================= 
  

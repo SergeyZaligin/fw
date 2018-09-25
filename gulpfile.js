@@ -29,11 +29,6 @@ gulp.task("scss", () => {
 gulp.task('js', function() {
   return gulp
     .src('dev/js/**/*.js')
-    .pipe(
-    babel({
-      presets: ['es2015'],
-    })
-    )
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(plumber())

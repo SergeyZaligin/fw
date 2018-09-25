@@ -11,14 +11,11 @@
 <p>Empty!!!</p>
 <?php endif; ?>
 
-<?php new \app\widgets\menu\MenuCategory([
-        'tpl' => WIDGETS . '/menu/my_menu.php',
-        'container' => 'ul',
-        'class' => 'my-menu',
-        'table' => 'categories',
-        'cache' => 60,
-        'cacheKey' => 'menu_ul',
-        ]); ?>
+<ul class="my-menu">
+  <?php new \app\widgets\menu\MenuCategory(); ?>
+</ul>
+
+
 
 <script>
     $(document).ready(function(){

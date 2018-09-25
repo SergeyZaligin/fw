@@ -20,7 +20,7 @@ class MenuCategory
 
     public function __construct($options = []){
         $this->tpl = WIDGETS . '/menu/menu_tpl/menu.php';
-        $this->getOptions($options);
+        //$this->getOptions($options);
         $this->run();
     }
 
@@ -32,30 +32,33 @@ class MenuCategory
         }
     }
 
-    protected function output(){
-        echo "<{$this->container} class='{$this->class}'>";
-            echo $this->menuHtml;
-        echo "</{$this->container}>";
-    }
+//    protected function output(){
+//        echo "<{$this->container} class='{$this->class}'>";
+//            echo $this->menuHtml;
+//        echo "</{$this->container}>";
+//    }
 
     protected function run(){
-        $cache = new Cache();
-        $this->menuHtml = $cache->get($this->cacheKey);
-        if (!$this->menuHtml) {
+        
+      
+        
             $menuModel = new Menu();
+            
             $this->data = $menuModel->getAll($this->table);
+            
             foreach ($this->data as $value) {
                 $data[$value['id']] = $value;
             }
+            
             $this->data = $data;
             
             $this->tree = $this->getTree();
             //debug($this->data);
             //die;
             $this->menuHtml = $this->getMenuHtml($this->tree);
-            $cache->set($this->cacheKey, $this->menuHtml, $this->cache);
-        }
-        $this->output();
+            
+     
+        echo $this->menuHtml;
     }
 
     protected function getTree(){
