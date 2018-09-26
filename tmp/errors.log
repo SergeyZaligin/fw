@@ -252,4 +252,6 @@
  ================= 
  [2018-09-25 11:41:35] | Текст ошибки: Too few arguments to function app\widgets\menu\MenuCategory::catToTemplate(), 0 passed in E:\OSPanel\domains\fw.loc\app\widgets\menu\MenuCategory.php on line 58 and exactly 3 expected | Файл E:\OSPanel\domains\fw.loc\app\widgets\menu\MenuCategory.php | Строка 82
  ================= 
+ [2018-09-26 12:54:58] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 66
+ ================= 
  

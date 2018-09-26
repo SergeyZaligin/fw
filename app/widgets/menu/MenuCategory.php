@@ -7,23 +7,77 @@ use app\widgets\menu\model\Menu;
 
 class MenuCategory
 {
-
+    /**
+     * Data
+     * 
+     * @var array
+     */
     protected $data;
+    /**
+     * Build tree
+     * 
+     * @var array
+     */
     protected $tree;
+    /**
+     * Render menu html
+     * 
+     * @var string
+     */
     protected $menuHtml;
+    /**
+     * Path template
+     * 
+     * @var string
+     */
     protected $tpl;
+    /**
+     * Container tag menu
+     * 
+     * @var string
+     */
     protected $container = 'ul';
+    /**
+     * Attribute class tag menu
+     * 
+     * @var string
+     */
     protected $class = 'menu';
+    /**
+     * Table name
+     * 
+     * @var string
+     */
     protected $table = 'categories';
+    /**
+     * Time on cache
+     * 
+     * @var int
+     */
     protected $cache = 3600;
+    /**
+     * Cache name
+     * 
+     * @var string
+     */
     protected $cacheKey = 'fw_menu';
 
+    /**
+     * Constructor menu
+     * 
+     * @param type $options
+     */
     public function __construct($options = []){
         $this->tpl = WIDGETS . '/menu/menu_tpl/menu.php';
         //$this->getOptions($options);
         $this->run();
     }
 
+    /**
+     * Options
+     * 
+     * @param type $options
+     */
     protected function getOptions($options){
         foreach($options as $k => $v){
             if(property_exists($this, $k)){
@@ -38,6 +92,9 @@ class MenuCategory
 //        echo "</{$this->container}>";
 //    }
 
+    /**
+     * Run widget menu
+     */
     protected function run(){
         
       
@@ -60,7 +117,11 @@ class MenuCategory
      
         echo $this->menuHtml;
     }
-
+    /**
+     * Build tree
+     * 
+     * @return array
+     */
     protected function getTree(){
         $tree = [];
         $data = $this->data;
@@ -73,7 +134,14 @@ class MenuCategory
         }
         return $tree;
     }
-
+    
+    /**
+     * Get menu Html
+     * 
+     * @param type $tree
+     * @param type $tab
+     * @return type
+     */
     protected function getMenuHtml($tree, $tab = ''){
         $str = '';
         foreach($tree as $id => $category){
@@ -81,7 +149,15 @@ class MenuCategory
         }
         return $str;
     }
-
+    
+    /**
+     * Categories to temlate 
+     * 
+     * @param type $category
+     * @param type $tab
+     * @param type $id
+     * @return type
+     */
     protected function catToTemplate($category, $tab, $id){
         ob_start();
         include WIDGETS . '/menu/menu_tpl/menu.php';
