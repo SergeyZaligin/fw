@@ -10,29 +10,31 @@ namespace engine;
 class Router 
 {
     /**
-     * таблица маршрутов
+     * Table routes
+     * 
      * @var array
      */
     protected static $routes = [];
     
     /**
-     * текущий маршрут
+     * Current route
+     * 
      * @var array
      */
     protected static $route = [];
     
     /**
-     * добавляет маршрут в таблицу маршрутов
+     * Add route in table routes
      * 
-     * @param string $regexp регулярное выражение маршрута
-     * @param array $route маршрут ([controller, action, params])
+     * @param string $regexp regexp route
+     * @param array $route route ([controller, action, params])
      */
     public static function add($regexp, $route = []) {
         self::$routes[$regexp] = $route;
     }
     
     /**
-     * возвращает таблицу маршрутов
+     * Return table routes
      * 
      * @return array
      */
@@ -41,7 +43,7 @@ class Router
     }
     
     /**
-     * возвращает текущий маршрут (controller, action, [params])
+     * Return current route (controller, action, [params])
      * 
      * @return array
      */
@@ -95,16 +97,12 @@ class Router
                     $cObj->$action();
                     $cObj->getView();
                 }else{
-//                    echo "Метод <b>$controller::$action</b> не найден";
                     throw new \Exception("Метод <b>$controller::$action</b> не найден", 404);
                 }
             }else{
-//                echo "Контроллер <b>$controller</b> не найден";
                 throw new \Exception("Контроллер <b>$controller</b> не найден", 404);
             }
         }else{
-//            http_response_code(404);
-//            include '404.html';
             throw new \Exception("Страница не найдена", 404);
         }
     }
