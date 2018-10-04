@@ -20,19 +20,19 @@ class App
      * Constructor App
      */
     public function __construct() 
-    {
-        // Get query string
-        $query = trim($_SERVER['QUERY_STRING'], '/');
-        // Start session
-        session_start();
+    {   
         // Reestr
         self::$app = Registry::instance();
+        // request handler
+        self::$app->request = Request::instance();
+        // Get query string
+        $query = trim(self::$app->request->server['QUERY_STRING'], '/');
+        // Start session
+        session_start();
         // add params in reestr
         $this->getParams();
         // error handler exception
         new ErrorHandler();
-        // request handler
-        self::$app->request = Request::instance();
         // routing
         Router::dispatch((string)$query);
     }
