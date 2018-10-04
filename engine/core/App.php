@@ -31,6 +31,8 @@ class App
         $this->getParams();
         // error handler exception
         new ErrorHandler();
+        // request handler
+        self::$app->request = Request::instance();
         // routing
         Router::dispatch((string)$query);
     }

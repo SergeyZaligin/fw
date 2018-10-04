@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 
 namespace engine;
 
@@ -10,135 +10,134 @@ namespace engine;
 class Router 
 {
     /**
-     * Table routes
-     * 
+     * таблица маршрутов
      * @var array
      */
     protected static $routes = [];
     
     /**
-     * Current route
-     * 
+     * текущий маршрут
      * @var array
      */
     protected static $route = [];
     
     /**
-     * Add route
+     * добавляет маршрут в таблицу маршрутов
      * 
-     * @param regexp $regexp
-     * @param array $route
+     * @param string $regexp регулярное выражение маршрута
+     * @param array $route маршрут ([controller, action, params])
      */
-    public static function add(string $regexp, array $route = []): void 
-    {
+    public static function add($regexp, $route = []) {
         self::$routes[$regexp] = $route;
     }
     
     /**
-     * Dispatch url,if matchRoute return true and run controller action
+     * возвращает таблицу маршрутов
      * 
-     * @param string $url
-     * @throws \Exception
+     * @return array
      */
-    public static function dispatch(string $url): void 
-    {
-        // get query string params
-        $url = self::removeQueryString($url);
-        
-        if (self::matchRoute($url)) {
-            
-            $controller = 'app\controllers\\' . self::$route['prefix'] 
-                        . self::$route['controller'] . 'Controller';
-            
-            if (class_exists($controller)) {
-                $controllerObject = new $controller(self::$route);
-                $action = self::lowerCamelCase(self::$route['action']) . 'Action';
-                if (method_exists($controllerObject, $action)) {
-                    $controllerObject->$action();
-                    $controllerObject->getView();
-                } else {
-                    throw new \Exception("Метод {$controller}::{$action} не найден", 404);
-                }
-            } else {
-                throw new \Exception("Контроллер {$controller} не найден", 404);
-            }
-        } else {
-            throw new \Exception('Страница не найдена', 404);
-        }
+    public static function getRoutes() {
+        return self::$routes;
     }
     
     /**
-     * Find match url
+     * возвращает текущий маршрут (controller, action, [params])
      * 
-     * @param mixed string|null $url
-     * @return bool
+     * @return array
      */
-    public static function matchRoute($url): bool
-    {
-        
-        // iteration on table routes
-        foreach (self::$routes as $pattern => $route) {
-            // find coincidence $pattern with $url and if true write value in $matches
-            if (preg_match("#$pattern#", (string)$url, $matches)) {
-                // rebuild array $match in string key (except int) 
-                foreach ($matches as $key => $value) {
-                    if (is_string($key)) {
-                        $route[$key] = $value; 
+    public static function getRoute() {
+        return self::$route;
+    }
+    
+    /**
+     * ищет URL в таблице маршрутов
+     * @param string $url входящий URL
+     * @return boolean
+     */
+    public static function matchRoute($url) {
+        foreach(self::$routes as $pattern => $route){
+            if(preg_match("#$pattern#i", $url, $matches)){
+                foreach($matches as $k => $v){
+                    if(is_string($k)){
+                        $route[$k] = $v;
                     }
                 }
-                if (empty($route['action'])) {
+                if(!isset($route['action'])){
                     $route['action'] = 'index';
                 }
-                if (!isset($route['prefix'])) {
+                // prefix for admin controllers
+                if(!isset($route['prefix'])){
                     $route['prefix'] = '';
-                } else {
+                }else{
                     $route['prefix'] .= '\\';
                 }
                 $route['controller'] = self::upperCamelCase($route['controller']);
                 self::$route = $route;
-                //debug(self::$route);
                 return true;
             }
         }
-        
         return false;
     }
     
     /**
-     * Handler string type of page-one PageOne
-     * 
-     * @param string $name
+     * перенаправляет URL по корректному маршруту
+     * @param string $url входящий URL
+     * @return void
+     */
+    public static function dispatch($url){
+        $url = self::removeQueryString($url);
+        if(self::matchRoute($url)){
+            $controller = 'app\controllers\\' . self::$route['prefix'] . self::$route['controller'] . 'Controller';
+            if(class_exists($controller)){
+                $cObj = new $controller(self::$route);
+                $action = self::lowerCamelCase(self::$route['action']) . 'Action';
+                if(method_exists($cObj, $action)){
+                    $cObj->$action();
+                    $cObj->getView();
+                }else{
+//                    echo "Метод <b>$controller::$action</b> не найден";
+                    throw new \Exception("Метод <b>$controller::$action</b> не найден", 404);
+                }
+            }else{
+//                echo "Контроллер <b>$controller</b> не найден";
+                throw new \Exception("Контроллер <b>$controller</b> не найден", 404);
+            }
+        }else{
+//            http_response_code(404);
+//            include '404.html';
+            throw new \Exception("Страница не найдена", 404);
+        }
+    }
+    
+    /**
+     * преобразует имена к виду CamelCase
+     * @param string $name строка для преобразования
      * @return string
      */
-    protected static function upperCamelCase(string $name): string 
-    {
+    protected static function upperCamelCase($name) {
         return str_replace(' ', '', ucwords(str_replace('-', ' ', $name)));
     }
     
     /**
-     * Handler string indexAction
-     * 
-     * @param string $name
+     * преобразует имена к виду camelCase
+     * @param string $name строка для преобразования
      * @return string
      */
-    protected static function lowerCamelCase(string $name): string 
-    {
+    protected static function lowerCamelCase($name) {
         return lcfirst(self::upperCamelCase($name));
     }
     
     /**
-     * Handler string indexAction
-     * 
-     * @param string $name
-     * @return mixed string|false
+     * возвращает строку без GET параметров
+     * @param string $url Запрос URL
+     * @return string
      */
-    protected static function removeQueryString(string $url) 
-    {
-        if ($url) {
-            $params = explode('&', $url , 2);
-            if (false === strpos($params[0], '=')) {
+    protected static function removeQueryString($url) {
+        if($url){
+            $params = explode('&', $url, 2);
+            if(false === strpos($params[0], '=')){
                 return rtrim($params[0], '/');
-            } else {
+            }else{
                 return '';
             }
         }
