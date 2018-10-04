@@ -3,7 +3,7 @@
 namespace engine;
 
 /**
- * Description of Request
+ * class Request realize wrapper for global variables PHP
  *
  * @author Sergey
  */

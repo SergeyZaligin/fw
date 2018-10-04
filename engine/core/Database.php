@@ -70,12 +70,20 @@ class Database
             exit($e->getMessage());
         }
     }
-    
-    public function closeConnection()
+    /**
+     * Close connection db
+     */
+    public function closeConnection(): void
     {
         $this->pdo = null;
     }
     
+    /**
+     * Init
+     * 
+     * @param string $query
+     * @param array $parameters
+     */
     private function init(string $query, array $parameters = [])
     {
         if (!$this->isConnected) {

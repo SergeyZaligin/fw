@@ -2,6 +2,8 @@
 
 namespace engine;
 
+use engine\libs\Common;
+
 /**
  * Main class application App
  *
@@ -26,7 +28,7 @@ class App
         // request handler
         self::$app->request = Request::instance();
         // Get query string
-        $query = trim(self::$app->request->server['QUERY_STRING'], '/');
+        $query = Common::getQueryString();
         // Start session
         session_start();
         // add params in reestr

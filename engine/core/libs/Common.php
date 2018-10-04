@@ -2,6 +2,8 @@
 
 namespace engine\libs;
 
+use engine\App;
+
 /**
  * Class Common
  *
@@ -15,7 +17,7 @@ class Common {
      * @return boolean
      */
     public static function isPost(): bool {
-        if ('POST' == $_SERVER['REQUEST_METHOD']) {
+        if ('POST' == App::$app->request->server['REQUEST_METHOD']) {
             return true;
         }
         return false;
@@ -27,7 +29,7 @@ class Common {
      * @return string
      */
     public static function getMethod(): string {
-        return $_SERVER['REQUEST_METHOD'];
+        return App::$app->request->server['REQUEST_METHOD'];
     }
 
     /**
@@ -36,13 +38,23 @@ class Common {
      * @return string
      */
     public static function getPathUrl(): string {
-        $pathUrl = $_SERVER['REQUEST_URI'];
+        $pathUrl = App::$app->request->server['REQUEST_URI'];
 
         // exists get params, cut get params
         if ($position = strpos($pathUrl, '?')) {
             $pathUrl = substr($pathUrl, 0, $position);
         }
         return $pathUrl;
+    }
+    
+    /**
+     * Get queryString url
+     * 
+     * @return string
+     */
+    public static function getQueryString(): string 
+    {
+        return trim(App::$app->request->server['QUERY_STRING'], '/');
     }
 
 }
