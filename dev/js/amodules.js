@@ -1952,6 +1952,12 @@ return $;
 
     }
     
+    LibsInit.prototype.initJqueryValitation = function (selector, obj) {
+
+        $(selector).validate(obj);
+
+    }
+    
     App.LibsInit = LibsInit;
     global.App = App;
     
