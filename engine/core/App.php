@@ -49,9 +49,11 @@ class App
         $params = require_once CONF . '/params.php';
         
         if (!empty($params)&& is_array($params)) {
+            
             foreach ($params as $key => $value) {
                 self::$app->setProperty($key, $value);
             }
+            
         }
     }
 

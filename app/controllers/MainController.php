@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\Post;
 use engine\libs\Pagination;
 use engine\base\View;
+use engine\App;
 
 /**
  * Description of MainController
@@ -20,7 +21,7 @@ class MainController extends AppController
         
         $modelUser = new Post();
         $total = $modelUser->count();
-        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        $page = isset(App::$app->request->get['page']) ? (int) App::$app->request->get['page'] : 1;
         $perPage = 2;
         $pagination = new Pagination($page, $perPage, $total);
         $start = $pagination->getStart();

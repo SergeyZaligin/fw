@@ -284,4 +284,16 @@
  ================= 
  [2018-10-05 09:41:33] | Текст ошибки: Call to undefined method app\controllers\admin\UserController::setMeta() | Файл E:\OSPanel\domains\fw.loc\app\controllers\admin\UserController.php | Строка 15
  ================= 
+ [2018-10-05 10:15:07] | Текст ошибки: preg_match() expects parameter 2 to be string, null given | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 65
+ ================= 
+ [2018-10-05 10:18:40] | Текст ошибки: Return value of engine\Router::removeQueryString() must be of the type string, none returned | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 156
+ ================= 
+ [2018-10-05 10:33:09] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
+ ================= 
+ [2018-10-05 10:33:16] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
+ ================= 
+ [2018-10-05 10:33:25] | Текст ошибки: Call to undefined method app\controllers\UserController::setMeta() | Файл E:\OSPanel\domains\fw.loc\app\controllers\UserController.php | Строка 16
+ ================= 
+ [2018-10-05 10:53:18] | Текст ошибки: Class name must be a valid object or a string | Файл E:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка 24
+ ================= 
  

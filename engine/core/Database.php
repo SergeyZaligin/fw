@@ -55,9 +55,13 @@ class Database
         $this->connect();
     }
     
+    /**
+     * Connect db
+     */
     private function connect()
     {
         $dsn = 'mysql:dbname=' . $this->settings['dbname'] . ';host=' . $this->settings['host'];
+        
         try {
             $this->pdo = new \PDO($dsn, $this->settings['user'], $this->settings['password'], [
                 \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES ' .$this->settings['charset']
@@ -70,6 +74,7 @@ class Database
             exit($e->getMessage());
         }
     }
+    
     /**
      * Close connection db
      */
@@ -89,13 +94,17 @@ class Database
         if (!$this->isConnected) {
             $this->connect();
         }
+        
         try {
             # Prepare query
             $this->statement = $this->pdo->prepare($query);
             # Bind parameters
             $this->bind($parameters);
+            
             if (!empty($this->parameters)) {
+                
                 foreach ($this->parameters as $param => $value) {
+                    
                     if (is_int($value[1])) {
                         $type = \PDO::PARAM_INT;
                     } elseif (is_bool($value[1])) {
@@ -105,9 +114,12 @@ class Database
                     } else {
                         $type = \PDO::PARAM_STR;
                     }
+                    
                     $this->statement->bindValue($value[0], $value[1], $type);
                 }
+                
             }
+            
             $this->statement->execute();
         } catch (\PDOException $e) {
             exit($e->getMessage());

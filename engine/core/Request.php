@@ -14,31 +14,37 @@ class Request
      * @var array
      */
     public $get = [];
+    
     /**
      *
      * @var array
      */
     public $post = [];
+    
     /**
      *
      * @var array
      */
     public $request = [];
+    
     /**
      *
      * @var array
      */
     public $session = [];
+    
     /**
      *
      * @var array
      */
     public $cookie = [];
+    
     /**
      *
      * @var array
      */
     public $files = [];
+    
     /**
      *
      * @var array

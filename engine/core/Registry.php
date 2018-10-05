@@ -31,6 +31,7 @@ class Registry
     {
         self::$properties[$name] = $value;
     }
+    
     /**
      * Get property
      * 

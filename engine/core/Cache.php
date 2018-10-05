@@ -40,13 +40,17 @@ class Cache
     public function get($key)
     {
         $file = CACHE . '/' . md5($key) . '.txt';
+        
         if (file_exists($file)) {
+            
             $content = unserialize(file_get_contents($file));
+            
             if (time() <= $content['end_time']) {
                 return $content;
             }
             unlink($file);
         }
+        
         return false;
     }
     
@@ -58,6 +62,7 @@ class Cache
     public function delete($key): void
     {
         $file = CACHE . '/' . md5($key) . '.txt';
+        
         if (file_exists($file)) {
             unlink($file);
         }

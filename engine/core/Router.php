@@ -1,4 +1,4 @@
-<?php
+<?php //declare(strict_types=1);
 
 namespace engine;
 
@@ -29,7 +29,8 @@ class Router
      * @param string $regexp regexp route
      * @param array $route route ([controller, action, params])
      */
-    public static function add($regexp, $route = []) {
+    public static function add($regexp, $route = []): void
+    {
         self::$routes[$regexp] = $route;
     }
     
@@ -38,7 +39,8 @@ class Router
      * 
      * @return array
      */
-    public static function getRoutes() {
+    public static function getRoutes(): array
+    {
         return self::$routes;
     }
     
@@ -47,95 +49,121 @@ class Router
      * 
      * @return array
      */
-    public static function getRoute() {
+    public static function getRoute(): array 
+    {
         return self::$route;
     }
     
     /**
-     * ищет URL в таблице маршрутов
-     * @param string $url входящий URL
+     * URL in table routes
+     * 
+     * @param string $url incoming URL
      * @return boolean
      */
-    public static function matchRoute($url) {
-        foreach(self::$routes as $pattern => $route){
-            if(preg_match("#$pattern#i", $url, $matches)){
-                foreach($matches as $k => $v){
-                    if(is_string($k)){
+    public static function matchRoute($url) 
+    {
+        foreach (self::$routes as $pattern => $route) {
+            
+            if (preg_match("#$pattern#i", $url, $matches)) {
+                
+                foreach ($matches as $k => $v) {
+                    
+                    if (is_string($k)) {
                         $route[$k] = $v;
                     }
+                    
                 }
-                if(!isset($route['action'])){
+                if (!isset($route['action'])) {
                     $route['action'] = 'index';
                 }
                 // prefix for admin controllers
-                if(!isset($route['prefix'])){
+                if (!isset($route['prefix'])) {
                     $route['prefix'] = '';
-                }else{
+                } else {
                     $route['prefix'] .= '\\';
                 }
                 $route['controller'] = self::upperCamelCase($route['controller']);
                 self::$route = $route;
                 return true;
             }
+            
         }
         return false;
     }
     
     /**
-     * перенаправляет URL по корректному маршруту
-     * @param string $url входящий URL
+     * Redirect URL on correct route
+     * 
+     * @param string $url incoming URL
      * @return void
      */
-    public static function dispatch($url){
+    public static function dispatch($url): void
+    {
         $url = self::removeQueryString($url);
-        if(self::matchRoute($url)){
+        
+        if (self::matchRoute($url)) {
             $controller = 'app\controllers\\' . self::$route['prefix'] . self::$route['controller'] . 'Controller';
-            if(class_exists($controller)){
+            
+            if (class_exists($controller)) {
+                
                 $cObj = new $controller(self::$route);
                 $action = self::lowerCamelCase(self::$route['action']) . 'Action';
-                if(method_exists($cObj, $action)){
+                
+                if (method_exists($cObj, $action)) {
+                    
                     $cObj->$action();
                     $cObj->getView();
-                }else{
+                    
+                } else {
                     throw new \Exception("Метод <b>$controller::$action</b> не найден", 404);
                 }
-            }else{
+            } else {
                 throw new \Exception("Контроллер <b>$controller</b> не найден", 404);
             }
-        }else{
+        } else {
             throw new \Exception("Страница не найдена", 404);
         }
     }
     
     /**
-     * преобразует имена к виду CamelCase
-     * @param string $name строка для преобразования
+     * Converts name at view  CamelCase
+     * 
+     * @param string $name string for convert
      * @return string
      */
-    protected static function upperCamelCase($name) {
+    protected static function upperCamelCase($name): string
+    {
         return str_replace(' ', '', ucwords(str_replace('-', ' ', $name)));
     }
     
     /**
-     * преобразует имена к виду camelCase
-     * @param string $name строка для преобразования
+     * Converts name at view camelCase
+     * 
+     * @param string $name string for convert
      * @return string
      */
-    protected static function lowerCamelCase($name) {
+    protected static function lowerCamelCase(string $name): string
+    {
         return lcfirst(self::upperCamelCase($name));
     }
     
     /**
-     * возвращает строку без GET параметров
-     * @param string $url Запрос URL
-     * @return string
+     * Return string without GET params
+     * 
+     * @param string $url query URL
+     * @return mixed string|null
      */
-    protected static function removeQueryString($url) {
-        if($url){
+    protected static function removeQueryString(string $url)
+    {
+        if ($url) {
+            
             $params = explode('&', $url, 2);
-            if(false === strpos($params[0], '=')){
+            
+            if (false === strpos($params[0], '=')) {
+                
                 return rtrim($params[0], '/');
-            }else{
+                
+            } else {
                 return '';
             }
         }
