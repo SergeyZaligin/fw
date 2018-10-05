@@ -2,8 +2,6 @@
 
 <script src="/js/main.min.js"></script>
 
-<script></script>
-
 <?php 
     foreach ($scripts as $script) {
         echo $script;

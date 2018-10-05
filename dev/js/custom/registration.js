@@ -29,7 +29,7 @@
         this.$formElement = $(selector);
 
         if (0 === this.$formElement.length) {
-            throw new Error('Could not find element with selector: ' + selector);
+            //throw new Error('Could not find element with selector: ' + selector);
         }
     }
     
