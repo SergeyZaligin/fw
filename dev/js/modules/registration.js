@@ -15,6 +15,19 @@
      */
     const $ = global.jQuery;
     
+    const LibsInit = App.LibsInit;
+    const libsInit = new LibsInit;
+    
+    libsInit.initJqueryValitation('#signup-form', {});
+    
+    $("[name='login']").rules("add", {
+        required: true,
+        minlength: 10,
+        messages: {
+            required: "Обязательное поле"
+        }
+    });
+    
     /**
      * Constructor handler form signup
      * 
@@ -34,16 +47,7 @@
         
         
     }
-    const LibsInit = App.LibsInit;
-    const libsInit = new LibsInit;
-    libsInit.initJqueryValitation('#signup-form', {});
-    $("[name='login']").rules("add", {
-        required: true,
-        minlength: 10,
-        messages: {
-            required: "Обязательное поле"
-        }
-    });
+    
     /**
      * Handler submit event
      * 
