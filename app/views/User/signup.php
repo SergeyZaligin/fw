@@ -1,5 +1,5 @@
 <h3>Регистрация</h3>
-<form action="/user/signup" method="post"> <br>
+<form action="/user/signup" method="post" id="signup-form"> <br>
     <label for="">login</label><br>
     <input type="text" name="login" value="<?=isset($_SESSION['form_data']['login']) ? h($_SESSION['form_data']['login']) : ''; ?>"><br>
     <label for="">password</label><br>
