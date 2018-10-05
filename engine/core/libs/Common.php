@@ -5,9 +5,9 @@ namespace engine\libs;
 use engine\App;
 
 /**
- * Class Common
+ * Class Common for common methods
  *
- * @author SuslikEst
+ * @author Sergey
  */
 class Common {
 
@@ -16,10 +16,12 @@ class Common {
      * 
      * @return boolean
      */
-    public static function isPost(): bool {
+    public static function isPost(): bool 
+    {
         if ('POST' == App::$app->request->server['REQUEST_METHOD']) {
             return true;
         }
+        
         return false;
     }
 
@@ -28,7 +30,8 @@ class Common {
      * 
      * @return string
      */
-    public static function getMethod(): string {
+    public static function getMethod(): string 
+    {
         return App::$app->request->server['REQUEST_METHOD'];
     }
 
@@ -37,13 +40,15 @@ class Common {
      * 
      * @return string
      */
-    public static function getPathUrl(): string {
+    public static function getPathUrl(): string 
+    {
         $pathUrl = App::$app->request->server['REQUEST_URI'];
 
         // exists get params, cut get params
         if ($position = strpos($pathUrl, '?')) {
             $pathUrl = substr($pathUrl, 0, $position);
         }
+        
         return $pathUrl;
     }
     

@@ -17,53 +17,62 @@ class Upload
      * @var string
      */
     public $name;
+    
     /**
      * Path store server
      * 
      * @var string 
      */
     public $tmp_name;
+    
     /**
      * Type file
      * 
      * @var string
      */
     protected $type;
+    
     /**
      * Size file
      * 
      * @var int
      */
     protected $size;
+    
     /**
      * 
      * @var array
      */
     protected $blacklist = [".php", ".phtml", ".php3", ".php4", ".html", ".htm"];
+    
     /**
      * Flag validation file
      * 
      * @var boolean
      */
     private $valid = false;
+    
     /**
      * Extension file
      * 
      * @var string
      */
     public $extension;
+    
     /**
      * Filename
      * 
      * @var string
      */
     public $filename;
+    
     /**
      * Path file
      * 
      * @var string
      */
     public $pathFile;
+    
     /**
      * Build uniq file name
      * 
@@ -86,14 +95,13 @@ class Upload
         $this->isValid();
         
         if ($this->valid) {
+            
             $this->extension = pathinfo($this->name);
             $this->filename = basename($this->name, '.' . $this->extension['extension']);
             
             $this->buildFile = $this->filename . (string) rand(10000000, 99999999) . '.' . $this->extension['extension'];
             $this->pathFile = "uploads/logos/" . $this->buildFile;
             
-            //debug($this->pathFile);
-            //die('Good');
         }else{
             throw new \Exception("Неверный формат файла изображения", 500);
         }
@@ -123,11 +131,13 @@ class Upload
     private function isValid(): void
     {
         foreach ($this->blacklist as $item) {
+            
             if ( (preg_match("/$item\$/i", $this->name)) || (($this->type != "image/jpg") && ($this->type != "image/jpeg")) || ($this->size > 102400) ) {
                 $this->valid = false;
             }else{
                 $this->valid = true;
             } 
+            
         }
     }
 

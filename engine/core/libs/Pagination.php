@@ -15,24 +15,28 @@ class Pagination
      * @var int 
      */
     public $currentPage;
+    
     /**
      * Count items on one page
      * 
      * @var int
      */
     public $perpage;
+    
     /**
      * All items
      * 
      * @var int 
      */
     public $total;
+    
     /**
      * Count all pages
      * 
      * @var int
      */
     public $countPages;
+    
     /**
      * Uri
      * 
