@@ -1,4 +1,4 @@
-<?php require_once 'header.php';?>
+<?php require_once 'header_admin.php';?>
     <div class="wrapper">
         <header class="header">
             <div class="container">
@@ -17,6 +17,6 @@
             </div>
         </footer>
     </div>
-<?php require_once 'footer.php';?>
+<?php require_once 'footer_admin.php';?>
 
 

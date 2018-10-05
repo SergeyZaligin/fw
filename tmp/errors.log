@@ -256,4 +256,32 @@
  ================= 
  [2018-10-04 11:44:57] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 108
  ================= 
+ [2018-10-05 09:06:07] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 106
+ ================= 
+ [2018-10-05 09:19:00] | Текст ошибки: Call to undefined method app\controllers\MainController::setMeta() | Файл E:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка 18
+ ================= 
+ [2018-10-05 09:19:03] | Текст ошибки: Call to undefined method app\controllers\MainController::setMeta() | Файл E:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка 18
+ ================= 
+ [2018-10-05 09:21:27] | Текст ошибки: Call to undefined method engine\base\View::getMeta() | Файл E:\OSPanel\domains\fw.loc\app\views\layouts\header.php | Строка 8
+ ================= 
+ [2018-10-05 09:22:03] | Текст ошибки: Call to undefined method engine\base\View::getMeta() | Файл E:\OSPanel\domains\fw.loc\app\views\layouts\header.php | Строка 8
+ ================= 
+ [2018-10-05 09:22:25] | Текст ошибки: Call to undefined method engine\base\View::getMeta() | Файл E:\OSPanel\domains\fw.loc\app\views\layouts\header.php | Строка 8
+ ================= 
+ [2018-10-05 09:23:07] | Текст ошибки: Call to undefined method engine\base\View::getMeta() | Файл E:\OSPanel\domains\fw.loc\app\views\layouts\header.php | Строка 8
+ ================= 
+ [2018-10-05 09:23:07] | Текст ошибки: Call to undefined method engine\base\View::getMeta() | Файл E:\OSPanel\domains\fw.loc\app\views\layouts\header.php | Строка 8
+ ================= 
+ [2018-10-05 09:23:07] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 106
+ ================= 
+ [2018-10-05 09:24:07] | Текст ошибки: Undefined class constant 'meta' | Файл E:\OSPanel\domains\fw.loc\engine\core\base\Controller.php | Строка 88
+ ================= 
+ [2018-10-05 09:24:24] | Текст ошибки: Call to undefined method engine\base\View::getMeta() | Файл E:\OSPanel\domains\fw.loc\app\views\layouts\header.php | Строка 8
+ ================= 
+ [2018-10-05 09:25:19] | Текст ошибки: Call to undefined method engine\base\View::getMeta() | Файл E:\OSPanel\domains\fw.loc\app\views\layouts\header.php | Строка 8
+ ================= 
+ [2018-10-05 09:41:31] | Текст ошибки: Call to undefined method app\controllers\admin\UserController::setMeta() | Файл E:\OSPanel\domains\fw.loc\app\controllers\admin\UserController.php | Строка 15
+ ================= 
+ [2018-10-05 09:41:33] | Текст ошибки: Call to undefined method app\controllers\admin\UserController::setMeta() | Файл E:\OSPanel\domains\fw.loc\app\controllers\admin\UserController.php | Строка 15
+ ================= 
  

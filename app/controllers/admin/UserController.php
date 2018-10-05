@@ -2,6 +2,8 @@
 
 namespace app\controllers\admin;
 
+use engine\base\View;
+
 /**
  * Description of UserController
  *
@@ -12,7 +14,7 @@ class UserController extends AdminController
 
     public function indexAction() 
     {
-        $this->setMeta("Админка", "Панель администратора сайта", "админка");
+        View::setMeta("Админка", "Панель администратора сайта", "админка");
     }
     
     public function testAction() 

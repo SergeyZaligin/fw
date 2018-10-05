@@ -92,7 +92,8 @@ class View
      * @param type $vars
      * @throws \Exception
      */
-    public function render($vars){
+    public function render($vars)
+    {
         $this->route['prefix'] = str_replace('\\', '/', $this->route['prefix']);
         if (is_array($vars)) extract($vars);
         $file_view = APP . "/views/{$this->route['prefix']}{$this->route['controller']}/{$this->view}.php";

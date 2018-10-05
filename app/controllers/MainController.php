@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Post;
 use engine\libs\Pagination;
+use engine\base\View;
 
 /**
  * Description of MainController
@@ -15,7 +16,7 @@ class MainController extends AppController
 
     public function indexAction() 
     {
-        $this->setMeta('Индекс пейдж', "Это описание индекс пейдж", "Это кейвордс");
+        View::setMeta('Индекс пейдж', "Это описание индекс пейдж", "Это кейвордс");
         
         $modelUser = new Post();
         $total = $modelUser->count();
@@ -33,6 +34,6 @@ class MainController extends AppController
             echo 'isAjax!!!';
             die;
         }
-        $this->setMeta('Test пейдж', "Это описание test пейдж", "Это кейвордс");
+        View::setMeta('Test пейдж', "Это описание test пейдж", "Это кейвордс");
     }
 }

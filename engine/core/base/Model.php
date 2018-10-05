@@ -67,17 +67,6 @@ abstract class Model
         }
     }
     
-//    public function save($table) 
-//    {
-//        $tbl = $this->db->query("SELECT * FROM {$table}", [], \PDO::FETCH_CLASS);
-//         
-//        foreach ($this->attributes as $name => $value) {
-//            $tbl[0]->$name = $value;
-//        }
-//        return $tbl;
-//        return R::store($tbl);
-//    }
-    
     /**
      * Get all errors
      */

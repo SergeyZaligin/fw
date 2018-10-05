@@ -93,31 +93,25 @@ abstract class Controller
     {
         $this->data = $data;
     }
-    
+        
     /**
-     * Set meta for metateg
+     * Check ajax 
      * 
-     * @param type $title
-     * @param type $keywords
-     * @param type $description
-     * @return void
+     * @return bool
      */
-    public function setMeta($title, $description, $keywords): void
+    public function isAjax() 
     {
-        $this->meta['title'] = $title;
-        $this->meta['description'] = $description;
-        $this->meta['keywords'] = $keywords;
-    }
-    
-    public function isAjax() {
         return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
     }
+    
     /**
-     * for ajax
+     * For ajax
+     * 
      * @param type $view
      * @param type $vars
      */
-    public function loadView($view, $vars = []){
+    public function loadView($view, $vars = [])
+    {
         extract($vars);
         require APP . "/views/{$this->route['controller']}/{$view}.php";
     }

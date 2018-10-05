@@ -11,4 +11,3 @@
   <?=View::getMeta(); ?>
 </head>
 <body>
-
