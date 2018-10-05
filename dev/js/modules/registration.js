@@ -15,18 +15,7 @@
      */
     const $ = global.jQuery;
     
-    const LibsInit = new App.LibsInit;
-    //const libsInit = new LibsInit;
     
-    LibsInit.initJqueryValitation('#signup-form', {success: "valid", errorClass: "invalid"});
-    
-    $("[name='login']").rules("add", {
-        required: true,
-        minlength: 10,
-        messages: {
-            required: "Обязательное поле"
-        }
-    });
     
     /**
      * Constructor handler form signup
@@ -40,7 +29,9 @@
         }
         
         this.$formElement = $(selector);
+        
 
+        
         if (0 === this.$formElement.length) {
             //throw new Error('Could not find element with selector: ' + selector);
         }
@@ -68,9 +59,25 @@
         });
         
     }
-    
+           const LibsInit = new App.LibsInit;
+           if($('body').is('#signup-form')){
+               LibsInit.initJqueryValitation('#signup-form', {success: "valid", errorClass: "invalid"});
+
+                $("[name='login']").rules("add", {
+                    required: true,
+                    minlength: 10,
+                    messages: {
+                        required: "Обязательное поле"
+                    }
+                });
+           }
+          
     
     App.FormHandler = FormHandler;
     global.App = App;
     
 })(window);
+
+const FORM_SIGNUP_SELECTOR = '#signup-form';
+const FormHandler = new App.FormHandler(FORM_SIGNUP_SELECTOR);
+FormHandler.addSubmitHandler();

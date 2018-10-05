@@ -7,4 +7,3 @@
     <button type="submit">Войти</button>
 </form>
 
-<?php debug($_SESSION);?>
