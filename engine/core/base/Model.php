@@ -4,6 +4,7 @@ namespace engine\base;
 
 use engine\Database;
 use Valitron\Validator as V;
+
 /**
  * Class Model
  *
@@ -17,12 +18,14 @@ abstract class Model
      * @var array
      */
     public $attributes = [];
+    
     /**
      * Errors validation
      * 
      * @var array
      */
     public $errors = [];
+    
     /**
      * Rules validation
      * 
@@ -30,7 +33,13 @@ abstract class Model
      */
     public $rules = [];
     
+    /**
+     * Database
+     * 
+     * @var object Database
+     */
     public $db;
+    
     /**
      * Constructor Model
      */
@@ -54,17 +63,25 @@ abstract class Model
         }
     }
     
-    public function validate($data) 
+    /**
+     * Validation data
+     * 
+     * @param array $data
+     * @return bool
+     */
+    public function validate(array $data = []): bool 
     {
         V::lang('ru');
         $v = new V($data);
         $v->rules($this->rules);
+        
         if ($v->validate()) {
             return true;
         } else {
            $this->errors = $v->errors();
            return false;
         }
+        
     }
     
     /**
@@ -73,6 +90,7 @@ abstract class Model
     public function getErrors(): void
     {
         $errors = '<ul>';
+        
         foreach ($this->errors as $error) {
             foreach ($error as $item) {
                 $errors .= '<li>';
@@ -80,6 +98,7 @@ abstract class Model
                 $errors .= '</li>';
             }
         }
+        
         $errors .= '</ul>';
         $_SESSION['validate_errors'] = $errors;
     }

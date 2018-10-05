@@ -15,42 +15,49 @@ abstract class Controller
      * @var array
      */
     public $route;
+    
     /**
      * Controller name
      * 
      * @var string
      */
     public $controller;
+    
     /**
      * Model name
      * 
      * @var string 
      */
     public $model;
+    
     /**
      * View name
      * 
      * @var string
      */
     public $view;
+    
     /**
      * layout name
      * 
      * @var string
      */
     public $layout;
+    
     /**
      * Prefix name
      * 
      * @var string
      */
     public $prefix;
+    
     /**
      * Data
      * 
      * @var array
      */
     public $data = [];
+    
     /**
      * Meta info
      * 
