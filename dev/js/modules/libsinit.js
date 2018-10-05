@@ -16,7 +16,7 @@
     const $ = global.jQuery;
     
     /**
-     * Constructor handler form signup
+     * Constructor Libs init
      * 
      * @param {Object} selector
      * @returns {registrationL#1.FormHandler}
@@ -24,7 +24,7 @@
     function LibsInit() {}
     
     /**
-     * Handler submit event
+     * Init libs object and his settings
      * 
      * @returns {undefined}
      */

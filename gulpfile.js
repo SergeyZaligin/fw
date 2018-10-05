@@ -27,18 +27,31 @@ gulp.task("scss", () => {
     .pipe(gulp.dest("public/css"));
 });
 
+
 gulp.task('js', function() {
   return gulp
-    .src('dev/js/**/*.js')
+    .src(["dev/js/libs/*.js", "dev/js/modules/*.js"])
     .pipe(order([
-        "dev/js/*.js"
+        "dev/js/libs/*.js",
+        "dev/js/modules/*.js"
      ]))
-    .pipe(concat('main.js'))
-    .pipe(uglify())
+    .pipe(concat('amodules.js'))
+    //.pipe(uglify())
     .pipe(plumber())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('public/js'));
+    //.pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('dev/js/'));
   });
+  
+gulp.task('main', function () {
+    return gulp
+        .src(['dev/js/amodules.js', 'dev/js/main.js'])
+        .pipe(order(['dev/js/amodules.js', 'dev/js/main.js']))
+        .pipe(concat('main.js'))
+        .pipe(uglify())
+        .pipe(plumber())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('public/js'));
+});
 
 gulp.task('img', function() {
   return gulp
@@ -55,8 +68,9 @@ gulp.task('img', function() {
     .pipe(gulp.dest('public/images'));
   });
 
-gulp.task("default", ["scss", "img", "js"], () => {
+gulp.task("default", ["scss", "img", "js", "main"], () => {
   gulp.watch("dev/scss/**/*.scss", ["scss"]);
   gulp.watch("dev/images/**/*", ["img"]);
   gulp.watch("dev/js/**/*", ["js"]);
+  gulp.watch("dev/js/**/*", ["main"]);
 });
