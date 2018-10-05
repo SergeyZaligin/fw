@@ -31,8 +31,19 @@
         if (0 === this.$formElement.length) {
             //throw new Error('Could not find element with selector: ' + selector);
         }
+        
+        
     }
-    
+    const LibsInit = App.LibsInit;
+    const libsInit = new LibsInit;
+    libsInit.initJqueryValitation('#signup-form', {});
+    $("[name='login']").rules("add", {
+        required: true,
+        minlength: 10,
+        messages: {
+            required: "Обязательное поле"
+        }
+    });
     /**
      * Handler submit event
      * 
@@ -53,6 +64,7 @@
         });
         
     }
+    
     
     App.FormHandler = FormHandler;
     global.App = App;

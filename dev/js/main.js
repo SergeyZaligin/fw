@@ -19,7 +19,7 @@
     libsInit.initDcAccrodion(DC_ACCORDION_SELECTOR, {});
     libsInit.initJqueryValitation(FORM_SIGNUP_SELECTOR, {});
     /*endLibsInit*/
-
+    
     //console.log(formHandler);
 
 })(window);
