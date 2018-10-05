@@ -33,6 +33,10 @@ class UserController extends AppController
             
             $userModel->attributes['password'] = password_hash($userModel->attributes['password'], PASSWORD_DEFAULT);
             
+            if ($userModel->attributes['role'] === 'admin') {
+                $userModel->attributes['role'] = 'register';
+            }
+            
             if ($userModel->insert($userModel->attributes['login'], $userModel->attributes['email'], $userModel->attributes['password'])) {
                 
                 App::$app->request->session['validate_success'] = 'Вы успешно зарегистроированы!';
