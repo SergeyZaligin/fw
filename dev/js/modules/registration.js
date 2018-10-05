@@ -15,10 +15,10 @@
      */
     const $ = global.jQuery;
     
-    const LibsInit = App.LibsInit;
-    const libsInit = new LibsInit;
+    const LibsInit = new App.LibsInit;
+    //const libsInit = new LibsInit;
     
-    libsInit.initJqueryValitation('#signup-form', {});
+    LibsInit.initJqueryValitation('#signup-form', {success: "valid", errorClass: "invalid"});
     
     $("[name='login']").rules("add", {
         required: true,
