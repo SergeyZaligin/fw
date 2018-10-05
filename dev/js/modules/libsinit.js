@@ -37,7 +37,13 @@
     LibsInit.prototype.initJqueryValitation = function (selector, obj) {
 
         $(selector).validate(obj);
-
+        $("[name='login']").rules("add", {
+            required: true,
+            minlength: 10,
+            messages: {
+                required: "Обязательное поле"
+            }
+        });
     }
     
     App.LibsInit = LibsInit;
