@@ -59,5 +59,5 @@
     
 })(window);
 
-const signup = new App.FormHandler('#signup-form').addSubmitHandler();
+const signup = new App.FormHandler('#signup-form');
 signup.addSubmitHandler();
