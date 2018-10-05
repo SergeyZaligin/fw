@@ -296,4 +296,20 @@
  ================= 
  [2018-10-05 10:53:18] | Текст ошибки: Class name must be a valid object or a string | Файл E:\OSPanel\domains\fw.loc\app\controllers\MainController.php | Строка 24
  ================= 
+ [2018-10-05 11:09:10] | Текст ошибки: Too few arguments to function app\models\User::insert(), 3 passed in E:\OSPanel\domains\fw.loc\app\controllers\UserController.php on line 40 and exactly 4 expected | Файл E:\OSPanel\domains\fw.loc\app\models\User.php | Строка 37
+ ================= 
+ [2018-10-05 11:10:52] | Текст ошибки: Too few arguments to function app\models\User::insert(), 3 passed in E:\OSPanel\domains\fw.loc\app\controllers\UserController.php on line 40 and exactly 4 expected | Файл E:\OSPanel\domains\fw.loc\app\models\User.php | Строка 37
+ ================= 
+ [2018-10-05 11:11:07] | Текст ошибки: Too few arguments to function app\models\User::insert(), 3 passed in E:\OSPanel\domains\fw.loc\app\controllers\UserController.php on line 40 and exactly 4 expected | Файл E:\OSPanel\domains\fw.loc\app\models\User.php | Строка 37
+ ================= 
+ [2018-10-05 11:11:35] | Текст ошибки: Too few arguments to function app\models\User::insert(), 3 passed in E:\OSPanel\domains\fw.loc\app\controllers\UserController.php on line 40 and exactly 4 expected | Файл E:\OSPanel\domains\fw.loc\app\models\User.php | Строка 37
+ ================= 
+ [2018-10-05 11:11:51] | Текст ошибки: Too few arguments to function app\models\User::insert(), 3 passed in E:\OSPanel\domains\fw.loc\app\controllers\UserController.php on line 40 and exactly 4 expected | Файл E:\OSPanel\domains\fw.loc\app\models\User.php | Строка 37
+ ================= 
+ [2018-10-05 11:13:05] | Текст ошибки: Too few arguments to function app\models\User::insert(), 3 passed in E:\OSPanel\domains\fw.loc\app\controllers\UserController.php on line 40 and exactly 4 expected | Файл E:\OSPanel\domains\fw.loc\app\models\User.php | Строка 37
+ ================= 
+ [2018-10-05 11:21:41] | Текст ошибки: Too few arguments to function app\models\User::insert(), 3 passed in E:\OSPanel\domains\fw.loc\app\controllers\UserController.php on line 40 and exactly 4 expected | Файл E:\OSPanel\domains\fw.loc\app\models\User.php | Строка 37
+ ================= 
+ [2018-10-05 11:22:43] | Текст ошибки: Too few arguments to function app\models\User::insert(), 3 passed in E:\OSPanel\domains\fw.loc\app\controllers\UserController.php on line 40 and exactly 4 expected | Файл E:\OSPanel\domains\fw.loc\app\models\User.php | Строка 37
+ ================= 
  

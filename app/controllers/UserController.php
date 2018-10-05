@@ -37,7 +37,7 @@ class UserController extends AppController
                 $userModel->attributes['role'] = 'register';
             }
             
-            if ($userModel->insert($userModel->attributes['login'], $userModel->attributes['email'], $userModel->attributes['password'])) {
+            if ($userModel->insert($userModel->attributes['login'], $userModel->attributes['email'], $userModel->attributes['password'], $userModel->attributes['role'] )) {
                 
                 App::$app->request->session['validate_success'] = 'Вы успешно зарегистроированы!';
                 

@@ -34,13 +34,14 @@ class User extends AppModel
         ]
     ];
     
-    public function insert($name, $login, $email, $password) 
+    public function insert($login, $email, $password, $role) 
     {
         return $this->db->query(
-        "INSERT INTO user (login, email, password) VALUES (:login, :email, :password)", [
+        "INSERT INTO user (login, email, password, role) VALUES (:login, :email, :password, :role)", [
             'login' => $login,
             'email' => $email,
             'password' => $password,
+            'role' => $role
         ]);
     }
     
