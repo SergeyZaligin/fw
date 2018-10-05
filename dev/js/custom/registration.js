@@ -1,9 +1,26 @@
 (function(global){
     'use strict';
     
+    /**
+     * Object App
+     * 
+     * @type object |global.App|global.App
+     */
     const App = global.App || {};
+    
+    /**
+     * Object jQuery
+     * 
+     * @type global.jQuery
+     */
     const $ = global.jQuery;
     
+    /**
+     * Constructor handler form signup
+     * 
+     * @param {Object} selector
+     * @returns {registrationL#1.FormHandler}
+     */
     function FormHandler(selector) {
         if (!selector) {
             throw new Error('No selector provided');
@@ -16,6 +33,11 @@
         }
     }
     
+    /**
+     * Handler submit event
+     * 
+     * @returns {undefined}
+     */
     FormHandler.prototype.addSubmitHandler = function () {
         
         this.$formElement.on('submit', function (event) {
