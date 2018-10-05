@@ -52,22 +52,27 @@ class View
      * @param type $layout
      * @param type $view
      */
-    public function __construct($route, $layout = '', $view = '') {
+    public function __construct($route, $layout = '', $view = '') 
+    {
         $this->route = $route;
+        
         if ($layout === false) {
             $this->layout = false;
         } else {
             $this->layout = $layout ?: LAYOUT;
         }
+        
         $this->view = $view;
     }
+    
     /**
      * Compress page
      * 
      * @param type $buffer
      * @return type
      */
-    protected function compressPage($buffer){
+    protected function compressPage($buffer)
+    {
         $search = [
             "/(\n)+/",
             "/\r\n+/",
@@ -86,22 +91,27 @@ class View
         ];
         return preg_replace($search, $replace, $buffer);
     }
+    
     /**
      * Render view
      * 
-     * @param type $vars
+     * @param array $vars
      * @throws \Exception
      */
-    public function render($vars)
+    public function render(array $vars = []): void
     {
         $this->route['prefix'] = str_replace('\\', '/', $this->route['prefix']);
+        
         if (is_array($vars)) extract($vars);
+        
         $file_view = APP . "/views/{$this->route['prefix']}{$this->route['controller']}/{$this->view}.php";
-        //ob_start([$this, 'compressPage']);
+        
         ob_start();
         {
             if (is_file($file_view)) {
+                
                 require $file_view;
+                
             } else {
                 throw new \Exception("<p>Не найден вид <b>$file_view</b></p>", 404);
             }
@@ -109,17 +119,22 @@ class View
             $content = ob_get_contents();
         }
         ob_clean();
-        //$content = ob_get_clean();
         
         if (false !== $this->layout) {
+            
             $file_layout = APP . "/views/layouts/{$this->layout}.php";
+            
             if (is_file($file_layout)) {
+                
                 $content = $this->getScript($content);
                 $scripts = [];
+                
                 if (!empty($this->scripts[0])) {
                     $scripts = $this->scripts[0];
                 }
+                
                 require $file_layout;
+                
             } else {
                 throw new \Exception("<p>Не найден шаблон <b>$file_layout</b></p>", 404);
             }
@@ -127,25 +142,27 @@ class View
     }
     
     /**
-     * Get scripts
+     * Get js scripts
      * 
      * @param type $content
-     * @return type
+     * @return string
      */
-    protected function getScript($content)
+    protected function getScript(string $content): string
     {
         $pattern = "#<script.*?>.*?</script>#si";
         preg_match_all($pattern, $content, $this->scripts);
+        
         if(!empty($this->scripts)){
             $content = preg_replace($pattern, '', $content);
         }
+        
         return $content;
     }
     
     /**
      * Get meta
      */
-    public static function getMeta()
+    public static function getMeta(): void
     {
         echo '<title>' . self::$meta['title'] . '</title>
         <meta name="description" content="' . self::$meta['desc'] . '">
@@ -153,13 +170,13 @@ class View
     }
     
     /**
-     * Set meta
+     * Set meta tags for view
      * 
-     * @param type $title
-     * @param type $desc
-     * @param type $keywords
+     * @param string $title
+     * @param string $desc
+     * @param string $keywords
      */
-    public static function setMeta($title = '', $desc = '', $keywords = '')
+    public static function setMeta(string $title = '', string $desc = '', string $keywords = ''): void
     {
         self::$meta['title'] = $title;
         self::$meta['desc'] = $desc;
