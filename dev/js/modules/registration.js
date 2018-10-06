@@ -40,17 +40,11 @@
         
     }
     
-    /**
-     * Handler submit event
-     * 
-     * @returns {undefined}
-     */
-    FormHandler.prototype.addSubmitHandler = function () {
+    FormHandler.prototype.validationSignupForm = function (selector, obj) {
         
-        this.$formElement.on('submit', function (event) {
-            
-            event.preventDefault();
-            const data = {};
+        
+            if($(selector).validate(obj).form()){
+                const data = {};
 
             $(this).serializeArray().forEach(function (item) {
                 data[item.name] = item.value;
@@ -70,14 +64,15 @@
                     //districtSelect.html(res);
                     console.log(res);
                 }
-             });   
-        });
-        
+             });  
+            }
+         
+        // e.preventDefault();
+            
+     
+         
     }
-    
-    
-          
-    
+   
     App.FormHandler = FormHandler;
     global.App = App;
     

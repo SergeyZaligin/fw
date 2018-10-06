@@ -33,28 +33,7 @@
         $(selector).dcAccordion(obj);
 
     }
-    
-    LibsInit.prototype.initJqueryValitation = function (selector, obj) {
-
-        $(selector).validate(obj);
-        
-//        const LibsInit = new App.LibsInit;
-//    
-// 
-//        
-//        LibsInit.initJqueryValitation('#signup-form', {success: "valid", errorClass: "invalid"});
-//
-//         $("[name='login']").rules("add", {
-//             required: true,
-//             minlength: 10,
-//             messages: {
-//                 required: "Обязательное поле"
-//             }
-//         });
-    
-
-    }
-    
+     
     App.LibsInit = LibsInit;
     global.App = App;
     
