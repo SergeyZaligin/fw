@@ -6,14 +6,14 @@
      * 
      * @type object |global.App|global.App
      */
-    const App = global.App || {};
+    var App = global.App || {};
     
     /**
      * Object jQuery
      * 
      * @type global.jQuery
      */
-    const $ = global.jQuery;
+    var $ = global.jQuery;
     
     
     
@@ -59,25 +59,11 @@
         });
         
     }
-           const LibsInit = new App.LibsInit;
-           if($('body').is('#signup-form')){
-               LibsInit.initJqueryValitation('#signup-form', {success: "valid", errorClass: "invalid"});
-
-                $("[name='login']").rules("add", {
-                    required: true,
-                    minlength: 10,
-                    messages: {
-                        required: "Обязательное поле"
-                    }
-                });
-           }
+    
+    
           
     
     App.FormHandler = FormHandler;
     global.App = App;
     
 })(window);
-
-const FORM_SIGNUP_SELECTOR = '#signup-form';
-const FormHandler = new App.FormHandler(FORM_SIGNUP_SELECTOR);
-FormHandler.addSubmitHandler();

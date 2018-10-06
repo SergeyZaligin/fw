@@ -6,14 +6,14 @@
      * 
      * @type object |global.App|global.App
      */
-    const App = global.App || {};
+    var App = global.App || {};
     
     /**
      * Object jQuery
      * 
      * @type global.jQuery
      */
-    const $ = global.jQuery;
+    var $ = global.jQuery;
     
     /**
      * Constructor Libs init
@@ -38,6 +38,21 @@
 
         $(selector).validate(obj);
         
+//        const LibsInit = new App.LibsInit;
+//    
+// 
+//        
+//        LibsInit.initJqueryValitation('#signup-form', {success: "valid", errorClass: "invalid"});
+//
+//         $("[name='login']").rules("add", {
+//             required: true,
+//             minlength: 10,
+//             messages: {
+//                 required: "Обязательное поле"
+//             }
+//         });
+    
+
     }
     
     App.LibsInit = LibsInit;
