@@ -1,5 +1,6 @@
 (function(global){
     'use strict';
+    const LibsInit = new App.LibsInit;
     
     /**
      * Object App
@@ -15,7 +16,7 @@
      */
     const $ = global.jQuery;
     
-    const LibsInit = new App.LibsInit;
+    
     //const libsInit = new LibsInit;
     
     LibsInit.initJqueryValitation('#signup-form', {success: "valid", errorClass: "invalid"});

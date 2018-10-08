@@ -1967,6 +1967,7 @@ return $;
 
 (function(global){
     'use strict';
+    const LibsInit = new App.LibsInit;
     
     /**
      * Object App
@@ -1982,7 +1983,7 @@ return $;
      */
     const $ = global.jQuery;
     
-    const LibsInit = new App.LibsInit;
+    
     //const libsInit = new LibsInit;
     
     LibsInit.initJqueryValitation('#signup-form', {success: "valid", errorClass: "invalid"});
