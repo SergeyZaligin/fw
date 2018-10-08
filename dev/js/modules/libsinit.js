@@ -6,14 +6,14 @@
      * 
      * @type object |global.App|global.App
      */
-    const App = global.App || {};
+    var App = global.App || {};
     
     /**
      * Object jQuery
      * 
      * @type global.jQuery
      */
-    const $ = global.jQuery;
+    var $ = global.jQuery;
     
     /**
      * Constructor Libs init
@@ -33,13 +33,7 @@
         $(selector).dcAccordion(obj);
 
     }
-    
-    LibsInit.prototype.initJqueryValitation = function (selector, obj) {
-
-        $(selector).validate(obj);
-        
-    }
-    
+     
     App.LibsInit = LibsInit;
     global.App = App;
     

@@ -23,14 +23,15 @@ class App
      */
     public function __construct() 
     {   
+        // Start session
+        session_start();
         // Reestr
         self::$app = Registry::instance();
         // request handler
         self::$app->request = Request::instance();
         // Get query string
         $query = Common::getQueryString();
-        // Start session
-        session_start();
+        
         // add params in reestr
         $this->getParams();
         // error handler exception
