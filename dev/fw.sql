@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 25 2018 г., 11:07
+-- Время создания: Окт 09 2018 г., 09:47
 -- Версия сервера: 5.7.20
 -- Версия PHP: 7.2.0
 
@@ -160,17 +160,16 @@ CREATE TABLE `user` (
   `login` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `role` enum('admin','user') NOT NULL
+  `ban` tinyint(1) NOT NULL DEFAULT '0',
+  `role` set('admin','register','employer','recruting') NOT NULL DEFAULT 'register'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `user`
 --
 
-INSERT INTO `user` (`id`, `login`, `password`, `email`, `name`, `role`) VALUES
-(1, 'admin', '$2y$10$rAmZ.qf.A0jzafT/bkUImOuzSxT8y8F3wfZxDa1sGuTfpVUpkQ9OK', 'admin@admin.com', 'Sergey', 'admin'),
-(2, 'suslik', '$2y$10$luiQWF/JeCjQG8N8Mzaob.GcnA0DEzYhOcAK9DKJxxY4U6NbzX8p2', 'webdevjsphp@gmail.com', 'Sergey', 'admin');
+INSERT INTO `user` (`id`, `login`, `password`, `email`, `ban`, `role`) VALUES
+(3, 'parser', '$2y$10$XLo6rpPRhGy9fHJSjRbvd.p8zLgFnyW9bTiiDFOn43u.UwyHHONrC', 'mail@mail.ru', 0, 'register');
 
 --
 -- Индексы сохранённых таблиц
@@ -235,7 +234,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

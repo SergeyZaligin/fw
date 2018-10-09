@@ -10,61 +10,61 @@
     /*beginSignupFormHandler*/
     var FormHandler = new App.FormHandler(FORM_SIGNUP_SELECTOR);
     
-//        FormHandler.validationSignupForm(FORM_SIGNUP_SELECTOR, {
-//        submitHandler: function(e) {
-//            e.preventDefault();
-//            const data = {};
-//
-//                $(this).serializeArray().forEach(function (item) {
-//                    data[item.name] = item.value;
-//                    //console.log(item.name + ' is ' + item.value);
-//                });
-//                console.log(data);
-//                $.ajax({
-//                    url: "/user/signup",
-//                    method: 'post',
-//                    data: {
-//                        login: data.login,
-//                        password: data.password,
-//                        email: data.email,
-//                        role: data.role
-//                    },
-//                    success: function(res){
-//                        //districtSelect.html(res);
-//                        console.log(res);
-//                    }
-//                 });  
-//            //$(e).submit();
-//          },
-//        rules: {
-//            login: {
-//                required: true,
-//                minlength: 3
-//            },
-//            email: {
-//                required: true
-//            },
-//            password: {
-//                required: true,
-//                minlength: 6
-//            }
-//        },
-//        messages: {
-//            login: {
-//                required: "Поле 'Логин' обязательно к заполнению",
-//                minlength: "Введите не менее 3-х символов в поле 'Логин'"
-//            },
-//            email: {
-//                required: "Поле 'Email' обязательно к заполнению",
-//                email: "Необходим формат адреса email" 
-//            },
-//            password:{
-//                required: "Поле 'Пароль' обязательно к заполнению",
-//                minlength: "Введите не менее 6 символов в поле 'Пароль'"
-//            }
-//        }
-//    
-//    });
+        FormHandler.validationSignupForm(FORM_SIGNUP_SELECTOR, {
+        submitHandler: function(e) {
+            e.preventDefault();
+            const data = {};
+
+                $(this).serializeArray().forEach(function (item) {
+                    data[item.name] = item.value;
+                    //console.log(item.name + ' is ' + item.value);
+                });
+                console.log(data);
+                $.ajax({
+                    url: "/user/signup",
+                    method: 'post',
+                    data: {
+                        login: data.login,
+                        password: data.password,
+                        email: data.email,
+                        role: data.role
+                    },
+                    success: function(res){
+                        //districtSelect.html(res);
+                        console.log(res);
+                    }
+                 });  
+            //$(e).submit();
+          },
+        rules: {
+            login: {
+                required: true,
+                minlength: 3
+            },
+            email: {
+                required: true
+            },
+            password: {
+                required: true,
+                minlength: 6
+            }
+        },
+        messages: {
+            login: {
+                required: "Поле 'Логин' обязательно к заполнению",
+                minlength: "Введите не менее 3-х символов в поле 'Логин'"
+            },
+            email: {
+                required: "Поле 'Email' обязательно к заполнению",
+                email: "Необходим формат адреса email" 
+            },
+            password:{
+                required: "Поле 'Пароль' обязательно к заполнению",
+                minlength: "Введите не менее 6 символов в поле 'Пароль'"
+            }
+        }
+    
+    });
 
     
     /*endSignupFormHandler*/
