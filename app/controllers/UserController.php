@@ -24,8 +24,13 @@ class UserController extends AppController
             if($this->isAjax()) {
                 $data = App::$app->request->post;
                 $userModel->load($data);
-                $success = "=====Success=====";
-                $this->loadView('ajaxSignup', $success);
+                if (!$userModel->validate($data) || !$userModel->checkUnique()){
+                    $status = "=====Error validation=====";
+                }else{
+                    $status = "=====Success validation=====";
+                }
+                    
+                $this->loadView('ajaxSignup', $status);
             }
             
             
