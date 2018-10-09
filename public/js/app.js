@@ -63,6 +63,7 @@
 //            //$(e).submit();
 //          },
         submitHandler: function(form) {
+            console.log('FORM ===>', form);
             ajax();
         },
         rules: {

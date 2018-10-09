@@ -22,8 +22,8 @@ class UserController extends AppController
             $userModel = new User();
             $data = App::$app->request->post;
             $userModel->load($data);
-//            debug($userModel->save('user'));
-//            die;
+            //debug($userModel->save('user'));
+            //die;
             
             if (!$userModel->validate($data) || !$userModel->checkUnique()) {
                 $userModel->getErrors();
@@ -42,7 +42,9 @@ class UserController extends AppController
                 App::$app->request->session['validate_success'] = 'Вы успешно зарегистроированы!';
                 
             } else {
+              
                 App::$app->request->session['validate_errors'] = 'Ошибка при регистрации! ';
+                
             }
             redirect();
         }
