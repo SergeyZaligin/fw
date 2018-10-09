@@ -19,18 +19,3 @@
 </form>
 
 <div id="results"></div>
-
-
-<?php
-$CITY = isset($_POST['p']) ? $_POST['p'] : null;
-?>
- <script>
-        
-        setInterval(function(){
-            var p = "<?php echo $CITY; ?>";
-           console.log(p);
-        }, 1000);
-           
-            
-      
-    </script>

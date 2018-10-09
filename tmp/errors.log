@@ -340,4 +340,12 @@
  ================= 
  [2018-10-09 16:34:46] | Текст ошибки: <p>Не найден вид <b>/opt/lampp/htdocs/fw.loc/app/views/User/logout.php</b></p> | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 116
  ================= 
+ [2018-10-09 16:51:13] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-09 16:51:27] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-09 16:54:33] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-09 16:54:36] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
  

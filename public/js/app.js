@@ -7,8 +7,7 @@
     var App = global.App;
     console.log('App===>', App);
     
-    
-    function ajax() { //Ajax отправка формы
+    function ajax() { 
         var msg = $("#signup-form").serialize();
         
         $.ajax({
@@ -32,36 +31,8 @@
     /*beginSignupFormHandler*/
     var FormHandler = new App.FormHandler(FORM_SIGNUP_SELECTOR);
     
-    
-    
-    
-    
         FormHandler.validationSignupForm(FORM_SIGNUP_SELECTOR, {
-//        submitHandler: function(e) {
-//            e.preventDefault();
-//            const data = {};
-//
-//                $(this).serializeArray().forEach(function (item) {
-//                    data[item.name] = item.value;
-//                    //console.log(item.name + ' is ' + item.value);
-//                });
-//                console.log(data);
-//                $.ajax({
-//                    url: "/user/signup",
-//                    method: 'post',
-//                    data: {
-//                        login: data.login,
-//                        password: data.password,
-//                        email: data.email,
-//                        role: data.role
-//                    },
-//                    success: function(res){
-//                        //districtSelect.html(res);
-//                        console.log(res);
-//                    }
-//                 });  
-//            //$(e).submit();
-//          },
+
         submitHandler: function(form) {
             console.log('FORM ===>', form);
             ajax();
