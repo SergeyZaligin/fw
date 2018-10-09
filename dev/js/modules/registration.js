@@ -1,6 +1,6 @@
 (function(global){
     'use strict';
-    const LibsInit = new App.LibsInit;
+   
     
     /**
      * Object App
@@ -8,6 +8,8 @@
      * @type object |global.App|global.App
      */
     var App = global.App || {};
+    
+    const LibsInit = new App.LibsInit;
     
     /**
      * Object jQuery
@@ -33,11 +35,11 @@
         
 
         
-        if (0 === this.$formElement.length) {
-            return false;
-            //throw new Error('Could not find element with selector: ' + selector);
-        }
-        
+//        if (0 === this.$formElement.length) {
+//            return false;
+//            //throw new Error('Could not find element with selector: ' + selector);
+//        }
+//        
         
     }
     
@@ -68,8 +70,7 @@
 //            }
          
         // e.preventDefault();
-            
-     
+           
          
     }
    

@@ -21,7 +21,7 @@
      * @param {Object} selector
      * @returns {registrationL#1.FormHandler}
      */
-    function LibsInit() {return true;}
+    function LibsInit() {}
     
     /**
      * Init libs object and his settings
