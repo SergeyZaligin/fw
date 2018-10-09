@@ -45,6 +45,10 @@
     
     FormHandler.prototype.validationSignupForm = function (selector, obj) {
         
+        $(selector).validate(obj);
+            
+        //$(selector).validate(obj);
+        
 //            if ($(selector).validate(obj)) {
 //                const data = {};
 //
@@ -71,7 +75,6 @@
          
         // e.preventDefault();
            
-         
     }
    
     App.FormHandler = FormHandler;

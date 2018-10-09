@@ -2,40 +2,69 @@
     'use strict';
 
     var FORM_SIGNUP_SELECTOR = '#signup-form';
-    
     var DC_ACCORDION_SELECTOR = '.my-menu';
     
     var App = global.App;
     console.log('App===>', App);
+    
+    
+    function ajax() { //Ajax отправка формы
+        var msg = $("#signup-form").serialize();
+        
+        $.ajax({
+            type: "POST",
+            url: "/user/signup",
+            data: msg,
+            success: function (data) {
+            //$("#results").html(data);
+            //if ($("#results").val() == "SUCCESS VALIDATION") {
+            //    addData();
+            //}
+                console.log(data);
+            },
+            error: function (xhr, str) {
+                alert("Возникла ошибка!");
+            }
+        });
+    }
+    
+    
     /*beginSignupFormHandler*/
     var FormHandler = new App.FormHandler(FORM_SIGNUP_SELECTOR);
     
+    
+    
+    
+    
         FormHandler.validationSignupForm(FORM_SIGNUP_SELECTOR, {
-        submitHandler: function(e) {
-            e.preventDefault();
-            const data = {};
-
-                $(this).serializeArray().forEach(function (item) {
-                    data[item.name] = item.value;
-                    //console.log(item.name + ' is ' + item.value);
-                });
-                console.log(data);
-                $.ajax({
-                    url: "/user/signup",
-                    method: 'post',
-                    data: {
-                        login: data.login,
-                        password: data.password,
-                        email: data.email,
-                        role: data.role
-                    },
-                    success: function(res){
-                        //districtSelect.html(res);
-                        console.log(res);
-                    }
-                 });  
-            //$(e).submit();
-          },
+//        submitHandler: function(e) {
+//            e.preventDefault();
+//            const data = {};
+//
+//                $(this).serializeArray().forEach(function (item) {
+//                    data[item.name] = item.value;
+//                    //console.log(item.name + ' is ' + item.value);
+//                });
+//                console.log(data);
+//                $.ajax({
+//                    url: "/user/signup",
+//                    method: 'post',
+//                    data: {
+//                        login: data.login,
+//                        password: data.password,
+//                        email: data.email,
+//                        role: data.role
+//                    },
+//                    success: function(res){
+//                        //districtSelect.html(res);
+//                        console.log(res);
+//                    }
+//                 });  
+//            //$(e).submit();
+//          },
+        submitHandler: function(form) {
+            ajax();
+        },
         rules: {
             login: {
                 required: true,
@@ -66,16 +95,12 @@
     
     });
 
-    
     /*endSignupFormHandler*/
 
     /*beginLibsInit*/
     var LibsInit = new App.LibsInit();
     LibsInit.initDcAccrodion(DC_ACCORDION_SELECTOR, {});
-    
-   
     /*endLibsInit*/
     
-    //console.log(formHandler);
 
 })(window);
