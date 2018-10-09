@@ -20,8 +20,15 @@ class UserController extends AppController
         
         if (!empty(App::$app->request->post) && isset(App::$app->request->post)) {
             $userModel = new User();
-            $data = App::$app->request->post;
-            $userModel->load($data);
+            
+            if($this->isAjax()) {
+                $data = App::$app->request->post;
+                $userModel->load($data);
+                $success = "=====Success=====";
+                $this->loadView('ajaxSignup', $success);
+            }
+            
+            
             //debug($userModel->save('user'));
             //die;
             

@@ -336,4 +336,6 @@
  ================= 
  [2018-10-09 10:35:32] | Текст ошибки: Call to undefined method app\models\User::save() | Файл E:\OSPanel\domains\fw.loc\app\controllers\UserController.php | Строка 25
  ================= 
+ [2018-10-09 13:21:56] | Текст ошибки: Class 'engine\base\App' not found | Файл E:\OSPanel\domains\fw.loc\engine\core\base\Controller.php | Строка 111
+ ================= 
  

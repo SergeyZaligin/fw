@@ -17,6 +17,10 @@
     <?php if (isset($_SESSION['form_data'])) unset($_SESSION['form_data']);?>
    
 </form>
+
+<div id="results"></div>
+
+
 <?php
 $CITY = isset($_POST['p']) ? $_POST['p'] : null;
 ?>

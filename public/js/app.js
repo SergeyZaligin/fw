@@ -16,7 +16,7 @@
             url: "/user/signup",
             data: msg,
             success: function (data) {
-            //$("#results").html(data);
+            $("#results").html(data);
             //if ($("#results").val() == "SUCCESS VALIDATION") {
             //    addData();
             //}

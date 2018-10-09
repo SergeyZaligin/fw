@@ -1,6 +1,7 @@
 <?php declare(strict_types=1);
 
 namespace engine\base;
+use engine\App;
 
 /**
  * Base controller on core
@@ -117,9 +118,13 @@ abstract class Controller
      * @param type $view
      * @param type $vars
      */
-    public function loadView($view, $vars = [])
+    public function loadView($view, $vars = [], $admin = '')
     {
-        extract($vars);
-        require APP . "/views/{$this->route['controller']}/{$view}.php";
+        
+        //extract($vars);
+        $data = $vars;
+        $this->layout = false;
+        require_once APP . "/views/{$admin}{$this->route['controller']}/{$view}.php";
+        
     }
 }
