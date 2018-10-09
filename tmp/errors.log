@@ -312,4 +312,6 @@
  ================= 
  [2018-10-05 11:22:43] | Текст ошибки: Too few arguments to function app\models\User::insert(), 3 passed in E:\OSPanel\domains\fw.loc\app\controllers\UserController.php on line 40 and exactly 4 expected | Файл E:\OSPanel\domains\fw.loc\app\models\User.php | Строка 37
  ================= 
+ [2018-10-08 08:47:57] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
+ ================= 
  
