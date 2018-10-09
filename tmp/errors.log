@@ -338,4 +338,6 @@
  ================= 
  [2018-10-09 13:21:56] | Текст ошибки: Class 'engine\base\App' not found | Файл E:\OSPanel\domains\fw.loc\engine\core\base\Controller.php | Строка 111
  ================= 
+ [2018-10-09 16:34:46] | Текст ошибки: <p>Не найден вид <b>/opt/lampp/htdocs/fw.loc/app/views/User/logout.php</b></p> | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 116
+ ================= 
  
