@@ -31,8 +31,8 @@ class UserController extends AppController
                     $status = "=====Error validation=====";
                     $this->loadView('ajaxSignup', $status);
                     
-                    $userModel->getErrors();
-                    App::$app->request->session['form_data'] = $data;
+                    //$userModel->getErrors();
+                    //App::$app->request->session['form_data'] = $data;
                     
                 }else{
                     $status = "=====Success validation=====";
@@ -45,7 +45,7 @@ class UserController extends AppController
                     if ($userModel->insert($userModel->attributes['login'], $userModel->attributes['email'], $userModel->attributes['password'], $userModel->attributes['role'] )) {
 
                         App::$app->request->session['validate_success'] = 'Вы успешно зарегистроированы!';
-
+                        $this->loadView('ajaxSignup', $status);
                     } else {
 
                         App::$app->request->session['validate_errors'] = 'Ошибка при регистрации! ';
