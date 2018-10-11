@@ -5,26 +5,33 @@
     var DC_ACCORDION_SELECTOR = '.my-menu';
     
     var App = global.App;
+    
+    var $ = global.jQuery;
+    
     console.log('App===>', App);
     
     function ajax() { 
         var msg = $("#signup-form").serialize();
         
+       
         $.ajax({
             type: "POST",
             url: "/user/signup",
             data: msg,
-            success: function (data) {
-            $("#results").html(data);
+            //dataType: "json",
+            success: function (res) {
+                //console.log('data===>', res);
+            $("#results").html(res);
             //if ($("#results").val() == "SUCCESS VALIDATION") {
             //    addData();
             //}
-                console.log(data);
+                //console.log(data);
             },
             error: function (xhr, str) {
                 alert("Возникла ошибка!");
             }
         });
+        
     }
     
     
