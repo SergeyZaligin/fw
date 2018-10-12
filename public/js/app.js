@@ -10,18 +10,18 @@
     
     console.log('App===>', App);
     
-    function ajax() { 
-        var msg = $("#signup-form").serialize();
+    function ajax($formData, method, url, $result) { 
+        var msg = $($formData).serialize();
         
        
         $.ajax({
-            type: "POST",
-            url: "/user/signup",
+            type: method,
+            url: url,
             data: msg,
             //dataType: "json",
             success: function (res) {
                 //console.log('data===>', res);
-            $("#results").html(res);
+            $($result).html(res);
             //if ($("#results").val() == "SUCCESS VALIDATION") {
             //    addData();
             //}
@@ -42,7 +42,7 @@
 
         submitHandler: function(form) {
             console.log('FORM ===>', form);
-            ajax();
+            ajax('#signup-form', 'POST', '/user/signup', '#results');
         },
         rules: {
             login: {
