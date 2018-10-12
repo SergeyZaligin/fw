@@ -1,22 +1,10 @@
 <?php require_once 'header_admin.php';?>
-    <div class="wrapper">
-        <header class="header">
-            <div class="container">
-                header
-            </div>
-        </header>
-        <main class="main">
-            <div class="container">
-                <h3>Admin layout</h3>
-                <?=$content; ?>
-            </div>
-        </main>
-        <footer class="footer">
-            <div class="container">
-                footer
-            </div>
-        </footer>
-    </div>
+    
+    <main class="main">
+        <?=$content; ?>
+    </main>
+
+    <?php require_once 'right-sidebar_admin.php';?>
+    <?php require_once 'left-sidebar_admin.php';?>
+
 <?php require_once 'footer_admin.php';?>
-
-
