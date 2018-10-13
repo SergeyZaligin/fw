@@ -1,3 +1,4 @@
+<?php use engine\App;?>
 <h3>Войти на сайт:</h3>
 <form action="/user/login" method="post"> <br>
     <label for="">login</label><br>
@@ -7,3 +8,5 @@
     <button type="submit">Войти</button>
 </form>
 
+<?php debug($_COOKIE['name']); ?>
+<?php debug($_SESSION['user']); ?>

@@ -368,4 +368,40 @@
  [2018-10-10 17:15:32] | Текст ошибки: syntax error, unexpected '}' | Файл /opt/lampp/htdocs/fw.loc/app/controllers/UserController.php | Строка 54
 >>>>>>> 7df955d165a52de1e757fad70d1dd63a8d862f2d
  ================= 
+ [2018-10-13 15:05:04] | Текст ошибки: <p>Не найден вид <b>/opt/lampp/htdocs/fw.loc/app/views/User/logout.php</b></p> | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 116
+ ================= 
+ [2018-10-13 15:05:04] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-13 15:05:07] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-13 15:11:37] | Текст ошибки: <p>Не найден вид <b>/opt/lampp/htdocs/fw.loc/app/views/User/logout.php</b></p> | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 116
+ ================= 
+ [2018-10-13 15:12:29] | Текст ошибки: <p>Не найден вид <b>/opt/lampp/htdocs/fw.loc/app/views/User/logout.php</b></p> | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 116
+ ================= 
+ [2018-10-13 15:13:08] | Текст ошибки: <p>Не найден вид <b>/opt/lampp/htdocs/fw.loc/app/views/User/logout.php</b></p> | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 116
+ ================= 
+ [2018-10-13 15:14:36] | Текст ошибки: <p>Не найден вид <b>/opt/lampp/htdocs/fw.loc/app/views/User/logout.php</b></p> | Файл /opt/lampp/htdocs/fw.loc/engine/core/base/View.php | Строка 116
+ ================= 
+ [2018-10-13 15:43:34] | Текст ошибки: Return value of app\models\User::login() must be of the type boolean, none returned | Файл /opt/lampp/htdocs/fw.loc/app/models/User.php | Строка 120
+ ================= 
+ [2018-10-13 15:52:45] | Текст ошибки: Return value of app\models\User::login() must be of the type boolean, none returned | Файл /opt/lampp/htdocs/fw.loc/app/models/User.php | Строка 122
+ ================= 
+ [2018-10-13 15:53:39] | Текст ошибки: Return value of app\models\User::login() must be of the type boolean, none returned | Файл /opt/lampp/htdocs/fw.loc/app/models/User.php | Строка 122
+ ================= 
+ [2018-10-13 16:04:17] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-13 16:25:52] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-13 16:25:52] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-13 16:25:55] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-13 16:26:09] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-13 16:27:01] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-13 16:30:15] | Текст ошибки: Class 'app\models\App' not found | Файл /opt/lampp/htdocs/fw.loc/app/models/User.php | Строка 92
+ ================= 
+ [2018-10-13 16:31:56] | Текст ошибки: Argument 2 passed to engine\libs\Cookie::set() must be of the type string, null given, called in /opt/lampp/htdocs/fw.loc/app/controllers/UserController.php on line 80 | Файл /opt/lampp/htdocs/fw.loc/engine/core/libs/Cookie.php | Строка 16
+ ================= 
  

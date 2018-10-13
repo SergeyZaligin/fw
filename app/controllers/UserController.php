@@ -5,6 +5,7 @@ namespace app\controllers;
 use engine\App;
 use app\models\User;
 use engine\base\View;
+use engine\libs\Cookie;
 
 /**
  * Description of UserController
@@ -76,6 +77,7 @@ class UserController extends AppController
             //die;
             if ($userModel->login(App::$app->request->post['login'])) {
                 App::$app->request->session['validate_success'] = 'Вы вошли на сайт!';
+                Cookie::set('name', App::$app->request->post['login']);
             } else {
                 App::$app->request->session['validate_errors'] = 'Логин или пароль введены не верно!';
             }
@@ -85,10 +87,15 @@ class UserController extends AppController
         
     public function logoutAction() 
     {
-        if (isset(App::$app->request->session['user'])) {
-            unset(App::$app->request->session['user']);
-            redirect();
+        if (isset($_SESSION['user'])) {
+            unset($_SESSION['user']);
         }
+        
+        if (isset($_COOKIE['name'])) {
+            Cookie::delete('name');
+        }
+        
+        redirect('/user/login');
     } 
     
     

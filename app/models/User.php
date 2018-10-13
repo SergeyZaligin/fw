@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use engine\App;
 
 /**
  * Description of User
@@ -10,6 +11,11 @@ namespace app\models;
  */
 class User extends AppModel
 {
+    /**
+     * Attributes model user
+     * 
+     * @var array
+     */
     public $attributes = [
         'login' => '',
         'password' => '',
@@ -29,7 +35,7 @@ class User extends AppModel
         'lengthMin' => [
             [
              'password',
-             7
+             6
             ]
         ]
     ];
@@ -76,8 +82,13 @@ class User extends AppModel
         return $user[0]->password;
     }
 
-
-    public function login($login) 
+    /**
+     * Checked login user
+     * 
+     * @param string $login
+     * @return bool
+     */
+    public function login(string $login): bool
     {
         $login = !empty(trim(App::$app->request->post['login'])) ? trim(App::$app->request->post['login']) : null;
         $password = !empty(trim(App::$app->request->post['password'])) ? trim(App::$app->request->post['password']) : null;
@@ -96,7 +107,7 @@ class User extends AppModel
                     foreach ($user as $key => $value) {
                         
                         if ($key !== 'password') {
-                            App::$app->request->session['user'][$key] = $value;
+                            $_SESSION['user'][$key] = $value;
                         }
                         
                     }

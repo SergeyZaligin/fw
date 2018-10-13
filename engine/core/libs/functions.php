@@ -19,7 +19,7 @@ function redirect ($http = false)
     } else {
         $redirect = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '/';
     }
-    header("Location:{$redirect}");
+    header("Location: {$redirect}");
     exit;
 }
 

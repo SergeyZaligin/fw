@@ -10,7 +10,7 @@
     <select name="role" id="role">
         <option value="">Выбрать роль:</option>
         <option value="register">Пользователь</option>
-        <option value="recruting">Агентство</option>
+        <option value="">Гость</option>
     </select>
     <br>
     <button type="submit">Зарегистрироваться</button>

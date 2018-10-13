@@ -26,8 +26,8 @@ class Cookie {
      */
     public static function get(string $key) 
     {
-        if (isset(App::$app->request->cookie[$key])) {
-            return App::$app->request->cookie[$key];
+        if (isset($_COOKIE[$key])) {
+            return $_COOKIE[$key];
         }
         return null;
     }
@@ -39,9 +39,9 @@ class Cookie {
      */
     public static function delete(string $key): void
     {
-        if (isset(App::$app->request->cookie[$key])) {
+        if (isset($_COOKIE[$key])) {
             self::set($key, '', -3600);
-            unset(App::$app->request->cookie[$key]);
+            unset($_COOKIE[$key]);
         }
     }
 
