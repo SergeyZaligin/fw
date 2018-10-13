@@ -13,6 +13,5 @@
 <body>
 <div class="wrapper">
     <header id="header">
-        <h3>The Holy Grail Layout with CSS Grid</h3>
-        
+        <h1 role="banner">The Holy Grail Layout with CSS Grid</h1> 
     </header>

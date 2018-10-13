@@ -1,4 +1,3 @@
-<input type="submit" value="send" id="send" name="send" />
 
 <?php if ($posts) : ?>
 

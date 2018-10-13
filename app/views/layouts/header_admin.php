@@ -13,21 +13,5 @@
 <body>
     <div class="wrapper">
     <header id="header">
-        <h3>The Holy Grail Layout with CSS Grid</h3>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/user/signup">Signup</a>
-                </li>
-                <li>
-                    <a href="/user/login">Login</a>
-                </li>
-                <li>
-                    <a href="/user/logout">Logout</a>
-                </li>
-            </ul>
-        </nav>
+        <h1 role="banner">Admin panel</h1>
     </header>

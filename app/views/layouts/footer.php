@@ -17,7 +17,7 @@
     <div class="success-validate"><?=$_SESSION['validate_success']; unset($_SESSION['validate_success']); ?></div>
 <?php endif; ?>
     
-<footer id="footer">Footer</footer>
+<footer id="footer" role="contentinfo">Footer</footer>
   </div>
   
 
