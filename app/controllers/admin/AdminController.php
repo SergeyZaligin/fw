@@ -23,7 +23,7 @@ abstract class AdminController extends Controller
             $this->isAdmin = true;
         } 
         if (!$this->isAdmin) {
-            redirect('/user/login');
+            redirect('/');
         }
     }
 
