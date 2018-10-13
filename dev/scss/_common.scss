@@ -61,8 +61,8 @@ p {
 #header { grid-area: header; }
 #footer { grid-area: footer; }
 #main { grid-area: main; }
-#left-sidebar { grid-area: ads; }
-#right-sidebar { grid-area: navigation; }
+#left-sidebar { grid-area: navigation; }
+#right-sidebar { grid-area: ads; }
 
 
 .wrapper {
@@ -71,8 +71,8 @@ p {
   grid-template-areas: "header header header"
                        "navigation main ads"
                        "footer footer footer";
-  grid-template-columns: 150px 1fr 150px;
-  grid-template-rows: 100px 1fr 30px;
+  grid-template-columns: 0.1fr 1fr 0.1fr;
+  grid-template-rows: auto 1fr 30px;
   min-height: 100vh;
 }
 
@@ -86,7 +86,7 @@ p {
                          "footer";
 
     grid-template-columns: 100%;
-    grid-template-rows: 100px 50px 1fr 50px 30px;
+    grid-template-rows: auto auto 1fr auto 30px;
   }
 }
 .errors-validate {
