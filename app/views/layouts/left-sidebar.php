@@ -1,6 +1,10 @@
 <aside id="left-sidebar">
     <section class="widget">
+        <?php if (isset($_COOKIE['name'])) : ?>
+        <p>Привет, <?=$_COOKIE['name'];?></p>
+        <?php else : ?>
         <h3>Вход на сайт</h3>
+        <?php endif; ?>
         <nav>
             <ul>
                 <li>

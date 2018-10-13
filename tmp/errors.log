@@ -404,4 +404,6 @@
  ================= 
  [2018-10-13 16:31:56] | Текст ошибки: Argument 2 passed to engine\libs\Cookie::set() must be of the type string, null given, called in /opt/lampp/htdocs/fw.loc/app/controllers/UserController.php on line 80 | Файл /opt/lampp/htdocs/fw.loc/engine/core/libs/Cookie.php | Строка 16
  ================= 
+ [2018-10-13 17:09:53] | Текст ошибки: Контроллер <b>app\controllers\LoginController</b> не найден | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 121
+ ================= 
  
