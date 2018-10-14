@@ -408,4 +408,18 @@
  ================= 
  [2018-10-14 07:55:49] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
  ================= 
+ [2018-10-14 10:08:27] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-14 10:18:34] | Текст ошибки: Cannot use object of type stdClass as array | Файл /opt/lampp/htdocs/fw.loc/engine/core/libs/Breadcrumbs.php | Строка 35
+ ================= 
+ [2018-10-14 10:18:53] | Текст ошибки: Cannot use object of type stdClass as array | Файл /opt/lampp/htdocs/fw.loc/engine/core/libs/Breadcrumbs.php | Строка 35
+ ================= 
+ [2018-10-14 10:19:03] | Текст ошибки: Cannot use object of type stdClass as array | Файл /opt/lampp/htdocs/fw.loc/engine/core/libs/Breadcrumbs.php | Строка 35
+ ================= 
+ [2018-10-14 10:20:47] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-14 10:22:19] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-14 10:26:01] | Текст ошибки: Cannot use object of type engine\libs\Breadcrumbs as array | Файл /opt/lampp/htdocs/fw.loc/app/views/Main/index.php | Строка 1
+ ================= 
  

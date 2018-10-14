@@ -1,4 +1,5 @@
-
+<?php debug($breadcrumbs->breadcrumbs);?>
+<hr>
 <?php if ($products ) : ?>
 <?php debug($products);?>
 <?php foreach ($products  as $product) {?>

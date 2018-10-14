@@ -6,6 +6,7 @@ use app\models\Product;
 use engine\libs\Pagination;
 use engine\base\View;
 use engine\App;
+use engine\libs\Breadcrumbs;
 
 /**
  * Description of MainController
@@ -29,7 +30,15 @@ class MainController extends AppController
         $id = App::$app->request->get['category'];
         $products = $modelProduct->getAllByCategoryId($start, $perPage, $id);
         
-        $this->setData(compact('products', 'pagination'));
+        $pr = $modelProduct->get();
+        $pr2 = [];
+        foreach ($pr as $value) {
+                $pr2[$value['id']] = $value;
+        }
+        //debug($pr2);
+        $breadcrumbs = new Breadcrumbs($pr2, $id);
+        
+        $this->setData(compact('products', 'pagination', 'breadcrumbs'));
     }
     
 }
