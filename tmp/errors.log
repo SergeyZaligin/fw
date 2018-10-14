@@ -426,4 +426,6 @@
  ================= 
  [2018-10-14 12:40:02] | Текст ошибки: Cannot use object of type stdClass as array | Файл /opt/lampp/htdocs/fw.loc/app/models/Category.php | Строка 22
  ================= 
+ [2018-10-14 14:25:13] | Текст ошибки: Argument 2 passed to app\models\Category::categoriesId() must be of the type integer, null given, called in /opt/lampp/htdocs/fw.loc/app/controllers/MainController.php on line 41 | Файл /opt/lampp/htdocs/fw.loc/app/models/Category.php | Строка 13
+ ================= 
  

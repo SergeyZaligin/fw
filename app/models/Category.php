@@ -21,7 +21,7 @@ class Category extends AppModel
         
         foreach ($array as $item) {
             if ($item['parent'] === (int)$id) {
-                $data .= $item['id'] . ', ';
+                $data .= $item['id'] . ',';
                 $data .= $this->categoriesId($array, $item['id']);
             }
         }

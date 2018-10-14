@@ -14,6 +14,10 @@ class Product extends AppModel
     {
         return $this->db->query("SELECT id, title, parent FROM categories", [], \PDO::FETCH_ASSOC);
     }
+    public function getAllByIds($ids) 
+    {
+        return $this->db->query("SELECT * FROM products WHERE parent IN($ids)", [], \PDO::FETCH_CLASS);
+    }
     public function getAll($start, $perPage) 
     {
         return $this->db->query("SELECT * FROM products LIMIT :start, :perPage", [

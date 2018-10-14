@@ -28,8 +28,8 @@ class MainController extends AppController
         $pagination = new Pagination($page, $perPage, $total);
         $start = $pagination->getStart();
         
-        $id = App::$app->request->get['category'];
-        $products = $modelProduct->getAllByCategoryId($start, $perPage, $id);
+        $id = (int)App::$app->request->get['category'];
+        //$products = $modelProduct->getAllByCategoryId($start, $perPage, $id);
         
         $pr = $modelProduct->get();
         $pr2 = [];
@@ -39,6 +39,9 @@ class MainController extends AppController
         
         $catModels = new Category();
         $ids = $catModels->categoriesId($pr2, $id);
+        $ids = !$ids ? $id : rtrim($ids, ',');
+        
+        $products = $modelProduct->getAllByIds($ids);
         
         //debug($ids);
         $breadcrumbs = new Breadcrumbs($pr2, $id);
