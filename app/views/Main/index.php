@@ -1,4 +1,4 @@
-<?php debug($breadcrumbs->breadcrumbs);?>
+<?php echo $breadcrumbs->breadcrumbs;?>
 <hr>
 <?php if ($products ) : ?>
 <?php debug($products);?>
