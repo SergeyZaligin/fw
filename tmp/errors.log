@@ -422,4 +422,8 @@
  ================= 
  [2018-10-14 10:26:01] | Текст ошибки: Cannot use object of type engine\libs\Breadcrumbs as array | Файл /opt/lampp/htdocs/fw.loc/app/views/Main/index.php | Строка 1
  ================= 
+ [2018-10-14 12:27:37] | Текст ошибки: syntax error, unexpected 'public' (T_PUBLIC) | Файл /opt/lampp/htdocs/fw.loc/app/models/Category.php | Строка 14
+ ================= 
+ [2018-10-14 12:40:02] | Текст ошибки: Cannot use object of type stdClass as array | Файл /opt/lampp/htdocs/fw.loc/app/models/Category.php | Строка 22
+ ================= 
  

@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Product;
+use app\models\Category;
 use engine\libs\Pagination;
 use engine\base\View;
 use engine\App;
@@ -35,10 +36,14 @@ class MainController extends AppController
         foreach ($pr as $value) {
                 $pr2[$value['id']] = $value;
         }
-        //debug($pr2);
+        
+        $catModels = new Category();
+        $ids = $catModels->categoriesId($pr2, $id);
+        
+        //debug($ids);
         $breadcrumbs = new Breadcrumbs($pr2, $id);
         
-        $this->setData(compact('products', 'pagination', 'breadcrumbs'));
+        $this->setData(compact('products', 'pagination', 'breadcrumbs', 'ids'));
     }
     
 }

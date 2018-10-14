@@ -1,3 +1,5 @@
+<?php echo $ids;?>
+<hr>
 <?php echo $breadcrumbs->breadcrumbs;?>
 <hr>
 <?php if ($products ) : ?>
