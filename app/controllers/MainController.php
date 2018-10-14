@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use app\models\Post;
+use app\models\Product;
 use engine\libs\Pagination;
 use engine\base\View;
 use engine\App;
@@ -19,22 +19,17 @@ class MainController extends AppController
     {
         View::setMeta('Индекс пейдж', "Это описание индекс пейдж", "Это кейвордс");
         
-        $modelUser = new Post();
-        $total = $modelUser->count();
+        $modelProduct = new Product();
+        $total = $modelProduct->count();
         $page = isset(App::$app->request->get['page']) ? (int) App::$app->request->get['page'] : 1;
         $perPage = 2;
         $pagination = new Pagination($page, $perPage, $total);
         $start = $pagination->getStart();
-        $posts = $modelUser->getAll($start, $perPage);
-        $this->setData(compact('posts', 'pagination'));
+        
+        $id = App::$app->request->get['category'];
+        $products = $modelProduct->getAllByCategoryId($start, $perPage, $id);
+        
+        $this->setData(compact('products', 'pagination'));
     }
     
-    public function testAction() 
-    {
-        if ($this->isAjax()) {
-            echo 'isAjax!!!';
-            die;
-        }
-        View::setMeta('Test пейдж', "Это описание test пейдж", "Это кейвордс");
-    }
 }

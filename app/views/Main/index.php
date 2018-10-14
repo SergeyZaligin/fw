@@ -1,8 +1,8 @@
 
-<?php if ($posts) : ?>
-
-<?php foreach ($posts as $post) {?>
-<h3><?=$post->title; ?></h3>
+<?php if ($products ) : ?>
+<?php debug($products);?>
+<?php foreach ($products  as $product) {?>
+<h3><a href="#"><?=$product->title; ?></a></h3>
 <?php } ?>
 
 <?=$pagination; ?>

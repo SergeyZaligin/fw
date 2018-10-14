@@ -151,7 +151,7 @@ class MenuCategory
     }
     
     /**
-     * Categories to temlate 
+     * Categories to template 
      * 
      * @param type $category
      * @param type $tab
