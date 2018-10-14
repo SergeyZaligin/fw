@@ -12,6 +12,8 @@ Router::add('^admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$',
         ]);
 
 // default
+Router::add('^product/(?P<id>[0-9]+)$', ['controller' => 'Product', 'action' => 'index']);
+
 Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
 Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', 
         [
