@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\Product;
 use app\models\Category;
 use engine\libs\Breadcrumbs;
+use engine\libs\Common;
 
 /**
  * Description of PageController
@@ -29,7 +30,11 @@ class ProductController extends AppController
         
         $comments = $productModel->getCommentsById($productId);
         
-        //debug($comments);die;
+        $commentsTree = Common::getTree($comments);
+        
+        $commentsHTML = Common::getMenuHtml($commentsTree); 
+        
+        debug($commentsHTML);die;
         //debug($this->route);die;
         
         

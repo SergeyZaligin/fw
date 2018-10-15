@@ -512,4 +512,10 @@
  ================= 
  [2018-10-15 12:56:43] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
  ================= 
+ [2018-10-15 13:27:30] | Текст ошибки: Too few arguments to function engine\libs\Common::catToTemplate(), 1 passed in E:\OSPanel\domains\fw.loc\engine\core\libs\Common.php on line 96 and exactly 3 expected | Файл E:\OSPanel\domains\fw.loc\engine\core\libs\Common.php | Строка 109
+ ================= 
+ [2018-10-15 13:28:39] | Текст ошибки: Using $this when not in object context | Файл E:\OSPanel\domains\fw.loc\app\widgets\menu\menu_tpl\menu.php | Строка 5
+ ================= 
+ [2018-10-15 13:34:35] | Текст ошибки: Using $this when not in object context | Файл E:\OSPanel\domains\fw.loc\app\widgets\comments\comments_tpl\comments.php | Строка 5
+ ================= 
  
