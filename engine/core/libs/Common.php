@@ -61,5 +61,56 @@ class Common {
     {
         return trim(App::$app->request->server['QUERY_STRING'], '/');
     }
+    
+    /**
+     * Build tree
+     * 
+     * @return array
+     */
+    public static function getTree($data) 
+    {
+        
+        $tree = [];
+        
+        foreach ($data as $id => &$node) {
+            if (!$node['parent']) {
+                $tree[$id] = &$node;
+            } else {
+                $data[$node['parent']]['childs'][$id] = &$node;
+            }
+        }
+        return $tree;
+    }
+
+    /**
+     * Get menu Html
+     * 
+     * @param type $tree
+     * @param type $tab
+     * @return type
+     */
+    public static function getMenuHtml($tree) 
+    {
+        $str = '';
+        foreach ($tree as $id => $item) {
+            $str .= self::catToTemplate($item);
+        }
+        return $str;
+    }
+
+    /**
+     * Categories to template 
+     * 
+     * @param type $category
+     * @param type $tab
+     * @param type $id
+     * @return type
+     */
+    public static function catToTemplate($item) 
+    {
+        ob_start();
+        include WIDGETS . '/comments/comments_tpl/comments.php';
+        return ob_get_clean();
+    }
 
 }

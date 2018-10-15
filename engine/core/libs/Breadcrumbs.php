@@ -10,19 +10,25 @@ namespace engine\libs;
 class Breadcrumbs 
 {
     public $id;
+    public $productId;
     public $data = [];
     public $breadcrumbsData;
     public $breadcrumbs = "<a href='/'>Главная</a>";
 
-    public function __construct($array, $id) 
+    public function __construct($array, $id, $itemId = 0, $itemTitle = '') 
     {
         $this->breadcrumbsData = $this->buildBreadcrumbs($array, $id);
         
         if ($this->breadcrumbsData) {
             foreach ($this->breadcrumbsData as $id => $title) {
-                $this->breadcrumbs .= " / <a href='?category={$id}' title='{$title}' >{$title}</a>";
+                $this->breadcrumbs .= " / <a href='/category/{$id}' title='{$title}' >{$title}</a>";
             }
-            $this->breadcrumbs = preg_replace("#(.+)?<a.+>(.+)</a>$#", "$1$2", $this->breadcrumbs);
+            if (!$itemId){
+                $this->breadcrumbs = preg_replace("#(.+)?<a.+>(.+)</a>$#", "$1$2", $this->breadcrumbs);
+            } else {
+                $this->breadcrumbs .= " / $itemTitle"; 
+            }
+            
         } else {
             $this->breadcrumbs = "<a href='/'>На главную</a>";
         }

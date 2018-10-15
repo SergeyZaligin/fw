@@ -9,7 +9,15 @@ namespace app\models;
  */
 class Category extends AppModel
 {
-    
+    public function getAllKeysById() 
+    {
+        $cat =  $this->db->query("SELECT id, title, parent FROM categories", [], \PDO::FETCH_ASSOC);
+        $data = [];
+        foreach ($cat as $value) {
+            $data[$value['id']] = $value;
+        }
+        return $data;
+    }
     public function categoriesId(array $array, int $id): string
     {
         
