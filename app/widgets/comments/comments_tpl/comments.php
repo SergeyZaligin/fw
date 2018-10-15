@@ -26,17 +26,9 @@
       height: 400,
       width: 350,
       modal: true,
-      buttons: {
-        Cancel: function() {
-          dialog.dialog( "close" );
-        }
-      },
-      close: function() {
-        form[ 0 ].reset();
-        allFields.removeClass( "ui-state-error" );
-      }
+      
     });
-$( "#create-user" ).button().on( "click", function() {
+$( "#create-user" ).on( "click", function() {
       dialog.dialog( "open" );
     });
 </script>
