@@ -11,7 +11,7 @@
         </div>
         
         <?php if(isset($item['childs'])): ?>
-            <ul>
+            <ul class="comment-child">
                 <?= self::getMenuHtml($item['childs']);?>
             </ul>
         <?php endif; ?>
