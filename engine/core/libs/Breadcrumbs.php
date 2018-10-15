@@ -20,7 +20,7 @@ class Breadcrumbs
         
         if ($this->breadcrumbsData) {
             foreach ($this->breadcrumbsData as $id => $title) {
-                $this->breadcrumbs .= " / <a href='?category={$id}' title='{$title}' >{$title}</a>";
+                $this->breadcrumbs .= " / <a href='/category/{$id}' title='{$title}' >{$title}</a>";
             }
             $this->breadcrumbs = preg_replace("#(.+)?<a.+>(.+)</a>$#", "$1$2", $this->breadcrumbs);
         } else {
