@@ -1,4 +1,4 @@
-<?php echo $breadcrumbs->breadcrumbs; ?>
+<?=$breadcrumbs->breadcrumbs; ?>
 <hr>
 <?php if ($products) : ?>
     <?php foreach ($products as $product) { ?>

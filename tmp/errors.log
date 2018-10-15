@@ -468,4 +468,40 @@
  ================= 
  [2018-10-15 09:20:30] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
  ================= 
+ [2018-10-15 09:51:49] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
+ ================= 
+ [2018-10-15 11:01:57] | Текст ошибки: Cannot use object of type stdClass as array | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 25
+ ================= 
+ [2018-10-15 11:01:57] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
+ ================= 
+ [2018-10-15 11:02:08] | Текст ошибки: Cannot use object of type stdClass as array | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 25
+ ================= 
+ [2018-10-15 11:03:09] | Текст ошибки: Cannot use object of type stdClass as array | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 25
+ ================= 
+ [2018-10-15 11:03:09] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
+ ================= 
+ [2018-10-15 11:03:10] | Текст ошибки: Cannot use object of type stdClass as array | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 25
+ ================= 
+ [2018-10-15 11:03:10] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
+ ================= 
+ [2018-10-15 11:03:10] | Текст ошибки: Cannot use object of type stdClass as array | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 25
+ ================= 
+ [2018-10-15 11:03:10] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
+ ================= 
+ [2018-10-15 11:03:10] | Текст ошибки: Cannot use object of type stdClass as array | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 25
+ ================= 
+ [2018-10-15 11:03:10] | Текст ошибки: Cannot use object of type stdClass as array | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 25
+ ================= 
+ [2018-10-15 11:03:11] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
+ ================= 
+ [2018-10-15 11:05:04] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
+ ================= 
+ [2018-10-15 11:37:00] | Текст ошибки: Too few arguments to function engine\libs\Breadcrumbs::__construct(), 2 passed in E:\OSPanel\domains\fw.loc\app\controllers\CategoryController.php on line 47 and exactly 4 expected | Файл E:\OSPanel\domains\fw.loc\engine\core\libs\Breadcrumbs.php | Строка 18
+ ================= 
+ [2018-10-15 11:37:42] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
+ ================= 
+ [2018-10-15 11:37:49] | Текст ошибки: Too few arguments to function engine\libs\Breadcrumbs::__construct(), 2 passed in E:\OSPanel\domains\fw.loc\app\controllers\CategoryController.php on line 47 and exactly 4 expected | Файл E:\OSPanel\domains\fw.loc\engine\core\libs\Breadcrumbs.php | Строка 18
+ ================= 
+ [2018-10-15 11:38:18] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
+ ================= 
  

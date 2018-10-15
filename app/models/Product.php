@@ -14,7 +14,7 @@ class Product extends AppModel
     
     public function getOneById($id) 
     {
-        return $this->db->query("SELECT * FROM `products` WHERE id=:id", [
+        return $this->db->query("SELECT * FROM `products` WHERE id=:id LIMIT 1", [
             'id' => $id,
             ], \PDO::FETCH_CLASS)[0];
     }

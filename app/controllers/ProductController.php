@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use app\models\Product;
+use app\models\Category;
+use engine\libs\Breadcrumbs;
 
 /**
  * Description of PageController
@@ -14,11 +16,25 @@ class ProductController extends AppController
 
     public function indexAction() 
     {
-        $id = (int)$this->route['id'];
+        $productId = (int)$this->route['id'];
+        
         $productModel = new Product();
-        $product = $productModel->getOneById($id);
-        //debug($product);die;
-        $this->setData(compact('product'));
+        $categoryModel = new Category();
+        
+        $product = $productModel->getOneById($productId);
+        $productId = $product->id;
+        $categoryId = $product->parent;
+        $productTitle = $product->title;
+        $categoryArray = $categoryModel->getAllKeysById();
+        
+        
+        
+        //debug($this->route);die;
+        
+        
+        $breadcrumbs = new Breadcrumbs($categoryArray, $categoryId, $productId, $productTitle);
+        
+        $this->setData(compact('product', 'breadcrumbs'));
     }
 
 }
