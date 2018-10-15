@@ -34,13 +34,13 @@ class ProductController extends AppController
         
         $commentsHTML = Common::getMenuHtml($commentsTree); 
         
-        debug($commentsHTML);die;
+        //debug($commentsHTML);die;
         //debug($this->route);die;
         
         
         $breadcrumbs = new Breadcrumbs($categoryArray, $categoryId, $productId, $productTitle);
         
-        $this->setData(compact('product', 'breadcrumbs', 'comments'));
+        $this->setData(compact('product', 'breadcrumbs', 'commentsHTML'));
     }
 
 }

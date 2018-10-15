@@ -518,4 +518,8 @@
  ================= 
  [2018-10-15 13:34:35] | Текст ошибки: Using $this when not in object context | Файл E:\OSPanel\domains\fw.loc\app\widgets\comments\comments_tpl\comments.php | Строка 5
  ================= 
+ [2018-10-15 14:00:32] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
+ ================= 
+ [2018-10-15 14:02:02] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
+ ================= 
  
