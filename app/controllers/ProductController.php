@@ -22,19 +22,20 @@ class ProductController extends AppController
         $categoryModel = new Category();
         
         $product = $productModel->getOneById($productId);
-        $productId = $product->id;
+        $productId = (int)$product->id;
         $categoryId = $product->parent;
         $productTitle = $product->title;
         $categoryArray = $categoryModel->getAllKeysById();
         
+        $comments = $productModel->getCommentsById($productId);
         
-        
+        //debug($comments);die;
         //debug($this->route);die;
         
         
         $breadcrumbs = new Breadcrumbs($categoryArray, $categoryId, $productId, $productTitle);
         
-        $this->setData(compact('product', 'breadcrumbs'));
+        $this->setData(compact('product', 'breadcrumbs', 'comments'));
     }
 
 }

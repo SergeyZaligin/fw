@@ -50,5 +50,23 @@ class Product extends AppModel
     {
         return (int)$this->db->query('SELECT COUNT(*) FROM products', [], \PDO::FETCH_COLUMN)[0];
     }
+    
+    /**
+     * Get products by id
+     * 
+     * @param int $id
+     */
+    public function getCommentsById(int $id) 
+    {
+        $arr = $this->db->query("SELECT * FROM `comments` WHERE comment_product=:id", [
+                'id' => $id,
+                ], \PDO::FETCH_ASSOC);
+        $data = [];
+        foreach ($arr as $value) {
+            $data[$value['comment_id']] = $value;
+        }
+        return $data;
+    }
+    
 }
 
