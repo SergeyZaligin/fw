@@ -12,15 +12,6 @@
     const LibsInit = new App.LibsInit;
     
     /**
-     * Object jQuery
-     * 
-     * @type global.jQuery
-     */
-    var $ = global.jQuery;
-    
-    
-    
-    /**
      * Constructor handler form signup
      * 
      * @param {Object} selector
@@ -30,14 +21,9 @@
         if (!selector) {
             throw new Error('No selector provided');
         }
-        
-        this.$formElement = $(selector);
-
     }
     
     FormHandler.prototype.validationSignupForm = function (selector, obj) {
-        
-        $(selector).validate(obj);
         
     }
    

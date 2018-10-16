@@ -8,12 +8,6 @@
      */
     var App = global.App || {};
     
-    /**
-     * Object jQuery
-     * 
-     * @type global.jQuery
-     */
-    var $ = global.jQuery;
     
     /**
      * Constructor Libs init
@@ -23,24 +17,7 @@
      */
     function LibsInit() {}
     
-    /**
-     * Init libs object and his settings
-     * 
-     * @returns {undefined}
-     */
-    LibsInit.prototype.initDcAccrodion = function (selector, obj) {
-        
-        $(selector).dcAccordion(obj);
-
-    };
-    
-    LibsInit.prototype.initJqueryUiDialog = function (selector, obj) {
-        $(selector).dialog(obj);
-        $('.comment-open-btn').on('click', function(){
-            $(selector).dialog('open');
-        });
-    };
-    
+   
     App.LibsInit = LibsInit;
     global.App = App;
     

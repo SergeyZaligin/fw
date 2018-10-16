@@ -11,7 +11,6 @@
 
     /*beginGlobals*/
     var App = global.App;
-    var $ = global.jQuery;
     /*endGlobals*/
 
     console.log('App===>', App);
@@ -58,70 +57,13 @@
     /*endCommonFunction*/
 
     /*beginSignupFormHandler*/
-    var FormHandler = new App.FormHandler(FORM_SIGNUP_SELECTOR);
-    FormHandler.validationSignupForm(FORM_SIGNUP_SELECTOR, {
-
-        submitHandler: function (form) {
-            console.log('FORM ===>', form);
-            ajax('#signup-form', 'POST', '/user/signup', '#results');
-        },
-        rules: {
-            login: {
-                required: true,
-                minlength: 3
-            },
-            email: {
-                required: true
-            },
-            password: {
-                required: true,
-                minlength: 6
-            }
-        },
-        messages: {
-            login: {
-                required: "Поле 'Логин' обязательно к заполнению",
-                minlength: "Введите не менее 3-х символов в поле 'Логин'"
-            },
-            email: {
-                required: "Поле 'Email' обязательно к заполнению",
-                email: "Необходим формат адреса email"
-            },
-            password: {
-                required: "Поле 'Пароль' обязательно к заполнению",
-                minlength: "Введите не менее 6 символов в поле 'Пароль'"
-            }
-        }
-
-    });
+    
     /*endSignupFormHandler*/
 
 
     /*beginLibsInit*/
     var LibsInit = new App.LibsInit();
-    LibsInit.initDcAccrodion(DC_ACCORDION_SELECTOR, {});
-    LibsInit.initJqueryUiDialog(JQUERY_UI_DIALOG_SELECTOR, {
-        title: 'Оставить отзыв',
-        autoOpen: false,
-        width: 450,
-        modal: true,
-        show: {
-            effect: "blind",
-            duration: 1000
-        },
-        hide: {
-            effect: "explode",
-            duration: 1000
-        },
-        buttons: {
-            "Добавить отзыв": function () {
-                $(this).dialog('open');
-            },
-            "Отмена": function () {
-                $(this).dialog('close');
-            }
-        }
-    });
+   
     /*endLibsInit*/
 
 
