@@ -10,7 +10,7 @@
 
 </div>
   
-<script src="/js/main.min.js"></script>
+<script async src="/js/main.min.js"></script>
 <?php 
     foreach ($scripts as $script) {
         echo $script;

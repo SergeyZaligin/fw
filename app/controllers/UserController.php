@@ -6,7 +6,6 @@ use engine\App;
 use app\models\User;
 use engine\base\View;
 use engine\libs\Cookie;
-use engine\base\View;
 
 /**
  * Description of UserController
