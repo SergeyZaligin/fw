@@ -7,7 +7,7 @@
         </div>
         <div class="comment-text">
             <p><?= nl2br($item['comment_text']); ?></p>
-            <a href="#?<?= $item['comment_id']; ?>" id="create-user">Ответить</a>
+            <a href="#?<?= $item['comment_id']; ?>" class="answer-comment">Ответить</a>
         </div>
         
         <?php if(isset($item['childs'])): ?>
@@ -17,9 +17,23 @@
         <?php endif; ?>
     </div>
 </li>
-<div id="dialog-form">
-    dfdsfsdfdfsdfsd
+
+<div id="form-wrapp">
+    <form id="dialog-form" method="post">
+        <div>
+            <label for="comment_author">Имя</label> <br>
+            <input type="text" name="comment_author" id="comment_author"></div>
+        <div>
+            <label for="comment_text"></label><br>
+            <input type="text" name="comment_text" id="comment_text">
+        </div>
+        <input type="hidden" name="parent" value="0">
+        <div>
+            <input type="submit" name="submit" value="Отправить сообщение">
+        </div>
+    </form>
 </div>
+
 <script>
     var dialog = $( "#dialog-form" ).dialog({
       autoOpen: false,
@@ -28,7 +42,7 @@
       modal: true,
       
     });
-$( "#create-user" ).on( "click", function() {
+$(".answer-comment" ).on( "click", function() {
       dialog.dialog( "open" );
     });
 </script>
