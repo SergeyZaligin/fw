@@ -2,33 +2,37 @@
     'use strict';
     
     /*beginConstants*/
-    var FORM_SIGNUP_SELECTOR = '#signup-form';
+    const FORM_SIGNUP_SELECTOR = '#signup-form';
     const ACCORDION_SELECTOR = '.category-list';
-    var JQUERY_UI_DIALOG_SELECTOR = '#form-wrapp';
+    const JQUERY_UI_DIALOG_SELECTOR = '#form-wrapp';
     /*endConstants*/
 
     /*beginGlobals*/
-    var App = global.App;
+    const App = global.App;
     /*endGlobals*/
 
     console.log('App===>', App);
 
     /*beginCommonFunction*/
-    var loadDeferredStyles = function () {
-        var addStylesNode = document.getElementById("deferred-styles");
-        var replacement = document.createElement("div");
+    const loadDeferredStyles = function () {
+        const addStylesNode = document.getElementById("deferred-styles");
+        const replacement = document.createElement("div");
         replacement.innerHTML = addStylesNode.textContent;
         document.body.appendChild(replacement)
         addStylesNode.parentElement.removeChild(addStylesNode);
     };
-    var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+    const raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
             window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-    if (raf)
+    if (raf){
         raf(function () {
             window.setTimeout(loadDeferredStyles, 0);
         });
-    else
+    } else {
         window.addEventListener('load', loadDeferredStyles);
+    }
+        
+    
+        
 
 //    function ajax($formData, method, url, $result) {
 //        
@@ -60,7 +64,7 @@
 
 
     /*beginLibsInit*/
-    var LibsInit = new App.LibsInit();
+    const LibsInit = new App.LibsInit();
    
     /*endLibsInit*/
 

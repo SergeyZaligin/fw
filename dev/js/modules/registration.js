@@ -7,7 +7,7 @@
      * 
      * @type object |global.App|global.App
      */
-    var App = global.App || {};
+    const App = global.App || {};
     
     const LibsInit = new App.LibsInit;
     
