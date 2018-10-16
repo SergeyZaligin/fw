@@ -32,8 +32,12 @@
         
         $(selector).dcAccordion(obj);
 
-    }
-     
+    };
+    
+    LibsInit.prototype.initJqueryUiDialog = function (selector, obj) {
+        $(selector).dialog(obj);
+    };
+    
     App.LibsInit = LibsInit;
     global.App = App;
     

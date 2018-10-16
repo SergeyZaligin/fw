@@ -18,16 +18,20 @@
         window.addEventListener('load', loadDeferredStyles);
 
 
-
+    /*beginConstants*/
     var FORM_SIGNUP_SELECTOR = '#signup-form';
     var DC_ACCORDION_SELECTOR = '.my-menu';
+    var JQUERY_UI_DIALOG_SELECTOR = '#form-wrapp';
+    /*endConstants*/
 
+    /*beginGlobals*/
     var App = global.App;
-
     var $ = global.jQuery;
+    /*endGlobals*/
 
     console.log('App===>', App);
 
+    /*beginCommonFunction*/
     function ajax($formData, method, url, $result) {
         var msg = $($formData).serialize();
 
@@ -51,11 +55,10 @@
         });
 
     }
-
+    /*endCommonFunction*/
 
     /*beginSignupFormHandler*/
     var FormHandler = new App.FormHandler(FORM_SIGNUP_SELECTOR);
-
     FormHandler.validationSignupForm(FORM_SIGNUP_SELECTOR, {
 
         submitHandler: function (form) {
@@ -91,12 +94,15 @@
         }
 
     });
-
     /*endSignupFormHandler*/
+
 
     /*beginLibsInit*/
     var LibsInit = new App.LibsInit();
     LibsInit.initDcAccrodion(DC_ACCORDION_SELECTOR, {});
+    LibsInit.initJqueryUiDialog(JQUERY_UI_DIALOG_SELECTOR, {});
     /*endLibsInit*/
+
+
 
 })(window);
