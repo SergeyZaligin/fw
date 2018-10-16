@@ -26,6 +26,8 @@
     FormHandler.prototype.validationSignupForm = function (selector, obj) {
         
     }
+    
+    
    
     App.FormHandler = FormHandler;
     global.App = App;

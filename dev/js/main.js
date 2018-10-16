@@ -67,7 +67,8 @@
     const LibsInit = new App.LibsInit();
    
     /*endLibsInit*/
-
-
+    
+    const category = document.querySelector('.category-nav');
+    console.log(category);
 
 })(window);
