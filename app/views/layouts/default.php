@@ -1,6 +1,6 @@
 <?php require_once 'header.php';?>
     
-    <main class="main" role="main">
+    <main id="main" role="main">
         <?=$content; ?>
     </main>
 

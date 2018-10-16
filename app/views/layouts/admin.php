@@ -1,6 +1,6 @@
 <?php require_once 'header_admin.php';?>
     
-    <main class="main">
+    <main id="main">
         <?=$content; ?>
     </main>
 

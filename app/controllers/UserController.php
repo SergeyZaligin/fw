@@ -6,6 +6,7 @@ use engine\App;
 use app\models\User;
 use engine\base\View;
 use engine\libs\Cookie;
+use engine\base\View;
 
 /**
  * Description of UserController
@@ -50,6 +51,7 @@ class UserController extends AppController
         
     public function loginAction() 
     {
+        View::setMeta('Индекс пейдж', "Это описание индекс пейдж", "Это кейвордс");
         if (!empty(App::$app->request->post) && isset(App::$app->request->post)) {
             
             $userModel = new User();
