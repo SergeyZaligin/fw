@@ -36,6 +36,9 @@
     
     LibsInit.prototype.initJqueryUiDialog = function (selector, obj) {
         $(selector).dialog(obj);
+        $('.comment-open-btn').on('click', function(){
+            $(selector).dialog('open');
+        });
     };
     
     App.LibsInit = LibsInit;

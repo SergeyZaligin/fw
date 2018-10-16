@@ -1,6 +1,22 @@
 (function (global) {
     'use strict';
 
+    
+
+    /*beginConstants*/
+    var FORM_SIGNUP_SELECTOR = '#signup-form';
+    var DC_ACCORDION_SELECTOR = '.my-menu';
+    var JQUERY_UI_DIALOG_SELECTOR = '#form-wrapp';
+    /*endConstants*/
+
+    /*beginGlobals*/
+    var App = global.App;
+    var $ = global.jQuery;
+    /*endGlobals*/
+
+    console.log('App===>', App);
+
+    /*beginCommonFunction*/
     var loadDeferredStyles = function () {
         var addStylesNode = document.getElementById("deferred-styles");
         var replacement = document.createElement("div");
@@ -17,32 +33,16 @@
     else
         window.addEventListener('load', loadDeferredStyles);
 
-
-    /*beginConstants*/
-    var FORM_SIGNUP_SELECTOR = '#signup-form';
-    var DC_ACCORDION_SELECTOR = '.my-menu';
-    var JQUERY_UI_DIALOG_SELECTOR = '#form-wrapp';
-    /*endConstants*/
-
-    /*beginGlobals*/
-    var App = global.App;
-    var $ = global.jQuery;
-    /*endGlobals*/
-
-    console.log('App===>', App);
-
-    /*beginCommonFunction*/
     function ajax($formData, method, url, $result) {
+        
         var msg = $($formData).serialize();
-
 
         $.ajax({
             type: method,
             url: url,
             data: msg,
-            //dataType: "json",
             success: function (res) {
-                //console.log('data===>', res);
+                
                 $($result).html(res);
                 //if ($("#results").val() == "SUCCESS VALIDATION") {
                 //    addData();
@@ -100,7 +100,19 @@
     /*beginLibsInit*/
     var LibsInit = new App.LibsInit();
     LibsInit.initDcAccrodion(DC_ACCORDION_SELECTOR, {});
-    LibsInit.initJqueryUiDialog(JQUERY_UI_DIALOG_SELECTOR, {});
+    LibsInit.initJqueryUiDialog(JQUERY_UI_DIALOG_SELECTOR, {
+        autoOpen: false,
+        width: 450,
+        modal: true,
+        buttons: {
+            "Добавить отзыв": function () {
+                $(this).dialog('open');
+            },
+            "Отмена": function () {
+                $(this).dialog('close');
+            }
+        }
+    });
     /*endLibsInit*/
 
 

@@ -1,12 +1,12 @@
 <li>
     <div class="comment-content">
         <div class="comment-meta">
-            <span><?=$item['comment_author']; ?></span>
-            <span><?=$item['created']; ?></span>
+            <span><?=h($item['comment_author']); ?></span>
+            <span><?=h($item['created']); ?></span>
             
         </div>
         <div class="comment-text">
-            <p><?= nl2br($item['comment_text']); ?></p>
+            <p><?= nl2br(h($item['comment_text'])); ?></p>
             <a href="#?<?= $item['comment_id']; ?>" class="answer-comment">Ответить</a>
         </div>
         
