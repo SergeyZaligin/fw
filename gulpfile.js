@@ -8,7 +8,6 @@ const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const pngquant = require('imagemin-pngquant');
 const cssnano = require("gulp-cssnano");
 const plumber = require("gulp-plumber");
-
 const uglify = require('gulp-uglifyjs');
 const babel = require('gulp-babel');
 
@@ -35,15 +34,13 @@ gulp.task("scss", () => {
 gulp.task('js', function() {
   return gulp
     .src([
-        "dev/js/libs/jquery.js",
-        "dev/js/libs/jquery-ui.js",
-        "dev/js/libs/jquery.cookie.js",
-        "dev/js/libs/jquery.accordion.js",
-        "dev/js/libs/jquery.validate.js",
         "dev/js/modules/libsinit.js",
         "dev/js/modules/registration.js",
         "dev/js/main.js"
      ])
+    .pipe(babel({
+        presets: ['@babel/env']
+    }))
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(plumber())

@@ -1,11 +1,9 @@
-(function (global) {
+(global => {
     'use strict';
-
     
-
     /*beginConstants*/
     var FORM_SIGNUP_SELECTOR = '#signup-form';
-    var DC_ACCORDION_SELECTOR = '.my-menu';
+    const ACCORDION_SELECTOR = '.category-list';
     var JQUERY_UI_DIALOG_SELECTOR = '#form-wrapp';
     /*endConstants*/
 
@@ -32,28 +30,28 @@
     else
         window.addEventListener('load', loadDeferredStyles);
 
-    function ajax($formData, method, url, $result) {
-        
-        var msg = $($formData).serialize();
-
-        $.ajax({
-            type: method,
-            url: url,
-            data: msg,
-            success: function (res) {
-                
-                $($result).html(res);
-                //if ($("#results").val() == "SUCCESS VALIDATION") {
-                //    addData();
-                //}
-                //console.log(data);
-            },
-            error: function (xhr, str) {
-                alert("Возникла ошибка!");
-            }
-        });
-
-    }
+//    function ajax($formData, method, url, $result) {
+//        
+//        var msg = $($formData).serialize();
+//
+//        $.ajax({
+//            type: method,
+//            url: url,
+//            data: msg,
+//            success: function (res) {
+//                
+//                $($result).html(res);
+//                //if ($("#results").val() == "SUCCESS VALIDATION") {
+//                //    addData();
+//                //}
+//                //console.log(data);
+//            },
+//            error: function (xhr, str) {
+//                alert("Возникла ошибка!");
+//            }
+//        });
+//
+//    }
     /*endCommonFunction*/
 
     /*beginSignupFormHandler*/
