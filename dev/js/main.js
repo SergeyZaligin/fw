@@ -68,7 +68,13 @@
    
     /*endLibsInit*/
     
-    const category = document.querySelector('.category-nav');
-    console.log(category);
+    const categoryList = document.querySelector('.category-nav .category-list');
+    const parentItems = document.querySelectorAll('.category-nav .category-list .parent-item');
+    
+    parentItems.addEventListener('click', function (e) {
+        e.preventDefault();
+    });
+    
+    
 
 })(window);
