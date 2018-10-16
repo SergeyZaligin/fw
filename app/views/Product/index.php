@@ -21,7 +21,7 @@
         </div>
         <div>
             <label for="comment_text"></label><br>
-            <input type="text" name="comment_text" id="comment_text">
+            <textarea type="text" name="comment_text" id="comment_text"></textarea>
         </div>
         <input type="hidden" name="parent" value="0">
         <div>
