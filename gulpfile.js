@@ -4,6 +4,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
+const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const pngquant = require('imagemin-pngquant');
 const cssnano = require("gulp-cssnano");
 const plumber = require("gulp-plumber");
@@ -53,14 +54,21 @@ gulp.task('js', function() {
 gulp.task('img', function() {
   return gulp
     .src('dev/images/**/*')
-    .pipe(
-    imagemin({
-      progressive: true,
-      svgoPlugins: [{ removeViewBox: false }],
-      use: [pngquant()],
-      interlaced: true,
-    })
-    )
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.jpegtran({progressive: true}),
+      imageminJpegRecompress({
+        loops: 5,
+        min: 55,
+        max: 55,
+        quality: 'low'
+      }),
+      imagemin.svgo(),
+      imagemin.optipng({optimizationLevel: 3}),
+      pngquant({quality: '55-60', speed: 5})
+    ],{
+      verbose: true
+    }))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('public/images'));
   });
