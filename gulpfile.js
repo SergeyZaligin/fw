@@ -2,7 +2,6 @@ const gulp = require("gulp");
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
 const concat = require('gulp-concat');
-const order = require("gulp-order");
 const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
@@ -30,11 +29,16 @@ gulp.task("scss", () => {
 
 gulp.task('js', function() {
   return gulp
-    .src("dev/js/**/*.js")
-//    .pipe(order([
-//        "dev/js/libs/*.js",
-//        "dev/js/modules/*.js"
-//     ]))
+    .src([
+        "dev/js/libs/jquery.js",
+        "dev/js/libs/jquery-ui.js",
+        "dev/js/libs/jquery.cookie.js",
+        "dev/js/libs/jquery.accordion.js",
+        "dev/js/libs/jquery.validate.js",
+        "dev/js/modules/libsinit.js",
+        "dev/js/modules/registration.js",
+        "dev/js/main.js"
+     ])
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(plumber())
