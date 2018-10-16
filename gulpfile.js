@@ -21,7 +21,11 @@ gulp.task("scss", () => {
         cascade: true
       })
     )
-    .pipe(cssnano())
+    .pipe(cssnano({
+                discardComments: {
+                    removeAll: true,
+                },
+            }))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest("public/css"));
 });
