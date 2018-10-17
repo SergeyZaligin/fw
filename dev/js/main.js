@@ -105,7 +105,7 @@
         buttons: {
             "Добавить отзыв": function () {
                 var dataForm = $('.form').serialize();
-                console.log(dataForm);   
+                   
             },
             "Отмена": function () {
                 $(this).dialog('close');

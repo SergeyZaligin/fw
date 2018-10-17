@@ -44,9 +44,22 @@
             }
             
             $('input[name="parent"]').attr('value', parent);
+            console.log(dataForm);
+            $.ajax({
+                type: 'post',
+                url: '/product',
+                data: dataForm,
+                success: function (res) {
+                    console.log('Ajax', res);
+                    //$($result).html(res);
+                },
+                error: function (xhr, str) {
+                    alert("Возникла ошибка!");
+                }
+            });
             
-            console.log('PARENT', parent);
             $(selector).dialog('open');
+            
         });
     };
     
