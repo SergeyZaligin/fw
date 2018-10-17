@@ -2,11 +2,13 @@
 
 namespace app\controllers;
 
+use engine\App;
 use app\models\Product;
 use app\models\Category;
 use engine\libs\Breadcrumbs;
 use engine\libs\Common;
 use engine\base\View;
+use app\models\Comment;
 
 /**
  * Description of PageController
@@ -23,7 +25,41 @@ class ProductController extends AppController
         $productId = (int)$this->route['id'];
         
         $productModel = new Product();
+        $commentModel = new Comment();
         $categoryModel = new Category();
+        
+        
+        if ($this->isAjax()) {
+            
+            $this->layout = false;
+            
+            $data = App::$app->request->post;
+            
+            //debug($data);die;
+            
+            $commentModel->load($data);
+            
+            if (!$commentModel->validate($data)){
+                $status = "=====Error validation=====";
+                $this->loadView('commentAjax', $status);
+            }else{
+                $status = "=====Success validation=====";
+
+                if ($commentModel->insert(
+                            $commentModel->attributes['comment_author'], 
+                            $commentModel->attributes['comment_text'], 
+                            $commentModel->attributes['parent'], 
+                            $commentModel->attributes['productId'])
+                        ) {
+                    $lastCommentId = $commentModel->lastCommentId; 
+                    $status .= $lastCommentId;
+                    $this->loadView('commentAjax', $status);
+                } else {
+                    $_SESSION['validate_errors'] = 'Ошибка при добавлении комментария! ';
+                }
+            }
+        }
+        
         
         $product = $productModel->getOneById($productId);
         $productId = (int)$product->id;

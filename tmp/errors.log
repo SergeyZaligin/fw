@@ -723,4 +723,14 @@
  ================= 
  [2018-10-17 09:57:57] | Текст ошибки: Страница не найдена | Файл E:\OSPanel\domains\fw.loc\engine\core\Router.php | Строка 124
  ================= 
+ [2018-10-17 10:14:30] | Текст ошибки: Class 'app\controllers\App' not found | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 42
+ ================= 
+ [2018-10-17 10:27:12] | Текст ошибки: Class 'app\controllers\App' not found | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 44
+ ================= 
+ [2018-10-17 11:15:31] | Текст ошибки: Cannot use object of type stdClass as array | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 32
+ ================= 
+ [2018-10-17 11:15:36] | Текст ошибки: Cannot use object of type stdClass as array | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 32
+ ================= 
+ [2018-10-17 11:57:27] | Текст ошибки: Call to a member function lastInsertId() on null | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 54
+ ================= 
  
