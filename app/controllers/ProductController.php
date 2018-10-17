@@ -22,7 +22,7 @@ class ProductController extends AppController
     {
         View::setMeta('Индекс пейдж', "Это описание индекс пейдж", "Это кейвордс");
         
-        $productId = (int)$this->route['id'];
+        
         
         $productModel = new Product();
         $commentModel = new Comment();
@@ -73,28 +73,32 @@ class ProductController extends AppController
                     $_SESSION['validate_errors'] = 'Ошибка при добавлении комментария! ';
                 }
             }
+        }else{
+            $productId = (int)$this->route['id'];
+            $product = $productModel->getOneById($productId);
+            $productId = (int)$product->id;
+            $categoryId = $product->parent;
+            $productTitle = $product->title;
+            $categoryArray = $categoryModel->getAllKeysById();
+
+            $comments = $productModel->getCommentsById($productId);
+
+            $commentsTree = Common::getTree($comments);
+
+            $commentsHTML = Common::getMenuHtml($commentsTree); 
+            
+            $breadcrumbs = new Breadcrumbs($categoryArray, $categoryId, $productId, $productTitle);
+        
+            $this->setData(compact('product', 'breadcrumbs', 'commentsHTML'));
         }
         
         
-        $product = $productModel->getOneById($productId);
-        $productId = (int)$product->id;
-        $categoryId = $product->parent;
-        $productTitle = $product->title;
-        $categoryArray = $categoryModel->getAllKeysById();
-        
-        $comments = $productModel->getCommentsById($productId);
-        
-        $commentsTree = Common::getTree($comments);
-        
-        $commentsHTML = Common::getMenuHtml($commentsTree); 
         
         //debug($commentsHTML);die;
         //debug($this->route);die;
         
         
-        $breadcrumbs = new Breadcrumbs($categoryArray, $categoryId, $productId, $productTitle);
         
-        $this->setData(compact('product', 'breadcrumbs', 'commentsHTML'));
     }
 
 }
