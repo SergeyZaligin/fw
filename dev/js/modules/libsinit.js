@@ -34,10 +34,67 @@
 
     };
     
-    LibsInit.prototype.initJqueryUiDialog = function (selector, obj) {
-        $(selector).dialog(obj);
-        $('.comment-open-btn').on('click', function(){
+    LibsInit.prototype.initJqueryUiDialog = function (selector) {
+        $(selector).dialog({
+            title: 'Оставить отзыв',
+            autoOpen: false,
+            width: 450,
+            modal: true,
+            resizible: false,
+            draggable: false,
+            show: {
+                effect: "blind",
+                duration: 1000
+            },
+            hide: {
+                effect: "explode",
+                duration: 1000
+            },
+            buttons: {
+                "Добавить отзыв": function () {
+                    var dataForm = $('.form').serialize();
+                    var parent = $('#parent').val();
+                    
+                    $.ajax({
+                        type: 'post',
+                        url: '/product',
+                        data: dataForm,
+                        success: function (res) {
+                            
+                            var showComment = "<li class='new-comment'>" + res + "</li>";
+                            
+                            console.log('Ajax', showComment);
+                            
+                            if (parent == 0) {
+                                $('ul.comments').append(showComment);
+                            } else {
+                                
+                            }
+                            //$("#result").html(res);
+                        },
+                        error: function (xhr, str) {
+                            alert("Возникла ошибка!");
+                        }
+                    });
+                },
+                "Отмена": function () {
+                    $(this).dialog('close');
+                }
+            }
+        });
+        
+        $('.comment-open-btn').on('click', function () {
+            
+            var parent = $(this).attr('data');
+            
+            if (!parseInt(parent)) {
+                parent = 0;
+            }
+            
+            $('input[name="parent"]').attr('value', parent);
+            
             $(selector).dialog('open');
+            
         });
     };
     

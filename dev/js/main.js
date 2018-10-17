@@ -85,28 +85,7 @@
     /*beginLibsInit*/
     var LibsInit = new App.LibsInit();
     LibsInit.initDcAccrodion(DC_ACCORDION_SELECTOR, {});
-    LibsInit.initJqueryUiDialog(JQUERY_UI_DIALOG_SELECTOR, {
-        title: 'Оставить отзыв',
-        autoOpen: false,
-        width: 450,
-        modal: true,
-        show: {
-            effect: "blind",
-            duration: 1000
-        },
-        hide: {
-            effect: "explode",
-            duration: 1000
-        },
-        buttons: {
-            "Добавить отзыв": function () {
-                $(this).dialog('open');
-            },
-            "Отмена": function () {
-                $(this).dialog('close');
-            }
-        }
-    });
+    LibsInit.initJqueryUiDialog(JQUERY_UI_DIALOG_SELECTOR);
     /*endLibsInit*/
 
 
