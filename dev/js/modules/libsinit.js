@@ -53,12 +53,23 @@
             buttons: {
                 "Добавить отзыв": function () {
                     var dataForm = $('.form').serialize();
+                    var parent = $('#parent').val();
+                    
                     $.ajax({
                         type: 'post',
                         url: '/product',
                         data: dataForm,
                         success: function (res) {
-                            console.log('Ajax', res);
+                            
+                            var showComment = "<li class='new-comment'>" + res + "</li>";
+                            
+                            console.log('Ajax', showComment);
+                            
+                            if (parent == 0) {
+                                $('ul.comments').append(showComment);
+                            } else {
+                                
+                            }
                             //$("#result").html(res);
                         },
                         error: function (xhr, str) {

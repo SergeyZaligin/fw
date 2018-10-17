@@ -1,2 +1,2 @@
 <?php
-debug($data);
+echo $data;
