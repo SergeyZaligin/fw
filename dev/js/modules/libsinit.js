@@ -34,29 +34,53 @@
 
     };
     
-    LibsInit.prototype.initJqueryUiDialog = function (selector, obj) {
-        $(selector).dialog(obj);
+    LibsInit.prototype.initJqueryUiDialog = function (selector) {
+        $(selector).dialog({
+            title: 'Оставить отзыв',
+            autoOpen: false,
+            width: 450,
+            modal: true,
+            resizible: false,
+            draggable: false,
+            show: {
+                effect: "blind",
+                duration: 1000
+            },
+            hide: {
+                effect: "explode",
+                duration: 1000
+            },
+            buttons: {
+                "Добавить отзыв": function () {
+                    var dataForm = $('.form').serialize();
+                    $.ajax({
+                        type: 'post',
+                        url: '/product',
+                        data: dataForm,
+                        success: function (res) {
+                            console.log('Ajax', res);
+                            //$($result).html(res);
+                        },
+                        error: function (xhr, str) {
+                            alert("Возникла ошибка!");
+                        }
+                    });
+                },
+                "Отмена": function () {
+                    $(this).dialog('close');
+                }
+            }
+        });
+        
         $('.comment-open-btn').on('click', function () {
             
             var parent = $(this).attr('data');
+            
             if (!parseInt(parent)) {
                 parent = 0;
             }
             
             $('input[name="parent"]').attr('value', parent);
-            console.log(dataForm);
-            $.ajax({
-                type: 'post',
-                url: '/product',
-                data: dataForm,
-                success: function (res) {
-                    console.log('Ajax', res);
-                    //$($result).html(res);
-                },
-                error: function (xhr, str) {
-                    alert("Возникла ошибка!");
-                }
-            });
             
             $(selector).dialog('open');
             
