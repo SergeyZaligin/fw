@@ -52,8 +52,23 @@ class ProductController extends AppController
                             $commentModel->attributes['productId'])
                         ) {
                     $lastCommentId = $commentModel->lastCommentId; 
-                    $status .= $lastCommentId;
-                    $this->loadView('commentAjax', $status);
+                    
+                    $lastProduct = $commentModel->getCommentByLastId($lastCommentId);
+                    
+                    $lastProductHTML = "<div class='comment-content'>";
+                    $lastProductHTML .= "<div class='comment-meta'>";
+                    $lastProductHTML .= "<span>" . h($lastProduct['comment_author']) . "</span><span>" . h($lastProduct['created']) . "</span>";
+                    $lastProductHTML .= "</div>";
+                    $lastProductHTML .= "<div class='comment-text'>";
+                    $lastProductHTML .= "<p>" . nl2br(h($lastProduct['comment_text'])) . "</p>";
+                    $lastProductHTML .= "</div>";
+                    $lastProductHTML .= "</div>";
+
+                    
+                    $lastProductHTML .= "</div>";
+
+                    $this->loadView('commentAjax', $lastProductHTML);
+                    
                 } else {
                     $_SESSION['validate_errors'] = 'Ошибка при добавлении комментария! ';
                 }

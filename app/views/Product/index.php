@@ -11,7 +11,7 @@
     </ul>
     <?php endif; ?>
 <?php endif; ?>
-
+    <div id="result"></div>
 <button class="comment-open-btn">Добавить отзыв:</button>
 <div id="form-wrapp">
     <form class="form" method="post">

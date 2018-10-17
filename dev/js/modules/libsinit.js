@@ -58,8 +58,8 @@
                         url: '/product',
                         data: dataForm,
                         success: function (res) {
-                            console.log('Ajax', res);
-                            //$($result).html(res);
+                            //console.log('Ajax', res);
+                            $("#result").html(res);
                         },
                         error: function (xhr, str) {
                             alert("Возникла ошибка!");

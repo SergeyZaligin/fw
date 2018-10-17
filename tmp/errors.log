@@ -733,4 +733,6 @@
  ================= 
  [2018-10-17 11:57:27] | Текст ошибки: Call to a member function lastInsertId() on null | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 54
  ================= 
+ [2018-10-17 12:27:31] | Текст ошибки: Cannot use object of type stdClass as array | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 60
+ ================= 
  
