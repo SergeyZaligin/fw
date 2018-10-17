@@ -15,9 +15,7 @@
     /*endGlobals*/
 
     console.log('App===>', App);
-//$(document).ready(function() {
-//        $("head").append("<link rel='stylesheet' href='/css/main.min.css' />");
-//    });
+
     /*beginCommonFunction*/
 
     function ajax($formData, method, url, $result) {
