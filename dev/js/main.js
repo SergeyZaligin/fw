@@ -92,6 +92,8 @@
         autoOpen: false,
         width: 450,
         modal: true,
+        resizible: false,
+        draggable: false,
         show: {
             effect: "blind",
             duration: 1000
@@ -102,7 +104,8 @@
         },
         buttons: {
             "Добавить отзыв": function () {
-                $(this).dialog('open');
+                var dataForm = $('.form').serialize();
+                console.log(dataForm);   
             },
             "Отмена": function () {
                 $(this).dialog('close');

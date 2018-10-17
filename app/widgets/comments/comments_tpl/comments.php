@@ -7,7 +7,7 @@
         </div>
         <div class="comment-text">
             <p><?= nl2br(h($item['comment_text'])); ?></p>
-            <a href="#?<?= $item['comment_id']; ?>" class="answer-comment">Ответить</a>
+            <span data="<?= $item['comment_id']; ?>" class="comment-open-btn reply" >Ответить</span>
         </div>
         
         <?php if(isset($item['childs'])): ?>

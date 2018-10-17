@@ -36,7 +36,16 @@
     
     LibsInit.prototype.initJqueryUiDialog = function (selector, obj) {
         $(selector).dialog(obj);
-        $('.comment-open-btn').on('click', function(){
+        $('.comment-open-btn').on('click', function () {
+            
+            var parent = $(this).attr('data');
+            if (!parseInt(parent)) {
+                parent = 0;
+            }
+            
+            $('input[name="parent"]').attr('value', parent);
+            
+            console.log('PARENT', parent);
             $(selector).dialog('open');
         });
     };
