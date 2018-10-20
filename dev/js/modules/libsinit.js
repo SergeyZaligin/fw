@@ -1,5 +1,5 @@
 (function(global){
-    'use strict';
+    
     
     /**
      * Object App
@@ -68,7 +68,13 @@
                             if (parent == 0) {
                                 $('ul.comments').append(showComment);
                             } else {
-                                
+                                var parentComment = $this.closest('li');
+                                var child = parentComment.children('ul');
+                                if (child.length) {
+                                    child.append(showComment);
+                                } else {
+                                    parentComment.append('<ul>' + showComment + '</ul>')
+                                }
                             }
                             //$("#result").html(res);
                         },
@@ -84,6 +90,12 @@
         });
         
         $('.comment-open-btn').on('click', function () {
+            
+            $this = $(this);
+            
+//            var parentComment = $this.closest('li');
+//            var child = parentComment.find('ul');
+//            console.log('Parent comment', child.length);
             
             var parent = $(this).attr('data');
             

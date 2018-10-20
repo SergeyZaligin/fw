@@ -769,4 +769,6 @@
  ================= 
  [2018-10-20 08:26:03] | Текст ошибки: Return value of app\models\Product::getOneById() must be an instance of app\models\Product, instance of stdClass returned | Файл /opt/lampp/htdocs/fw.loc/app/models/Product.php | Строка 24
  ================= 
+ [2018-10-20 11:29:00] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
  
