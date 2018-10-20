@@ -9,19 +9,33 @@ namespace app\models;
  */
 class Category extends AppModel
 {
-    public function getAllKeysById() 
+    /**
+     * Get assoc array where key by id
+     * 
+     * @return aray
+     */
+    public function getAllKeysById(): array
     {
         $cat =  $this->db->query("SELECT id, title, parent FROM categories", [], \PDO::FETCH_ASSOC);
         $data = [];
+        
         foreach ($cat as $value) {
             $data[$value['id']] = $value;
         }
+        
         return $data;
     }
-    public function categoriesId(array $array, int $id): string
+    
+    /**
+     * Get all ids for category
+     * 
+     * @param array $array
+     * @param int $id
+     * @return string
+     */
+    public function categoryIds(array $array, int $id): string
     {
-        
-        if(!$id){
+        if (!$id) {
             return false;
         }
         
@@ -30,7 +44,7 @@ class Category extends AppModel
         foreach ($array as $item) {
             if ($item['parent'] === (int)$id) {
                 $data .= $item['id'] . ',';
-                $data .= $this->categoriesId($array, $item['id']);
+                $data .= $this->categoryIds($array, $item['id']);
             }
         }
         

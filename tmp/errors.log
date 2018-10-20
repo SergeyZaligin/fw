@@ -735,4 +735,38 @@
  ================= 
  [2018-10-17 12:27:31] | Текст ошибки: Cannot use object of type stdClass as array | Файл E:\OSPanel\domains\fw.loc\app\controllers\ProductController.php | Строка 60
  ================= 
+ [2018-10-19 17:39:05] | Текст ошибки: Call to undefined function app\controllers\getAllByCategoryId() | Файл /opt/lampp/htdocs/fw.loc/app/controllers/CategoryController.php | Строка 52
+ ================= 
+ [2018-10-19 17:39:37] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-19 17:42:04] | Текст ошибки: Too few arguments to function app\models\Product::getAllByIds(), 1 passed in /opt/lampp/htdocs/fw.loc/app/controllers/CategoryController.php on line 43 and exactly 3 expected | Файл /opt/lampp/htdocs/fw.loc/app/models/Product.php | Строка 27
+ ================= 
+ [2018-10-19 17:42:04] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-19 17:43:11] | Текст ошибки: Too few arguments to function app\models\Product::getAllByIds(), 1 passed in /opt/lampp/htdocs/fw.loc/app/controllers/CategoryController.php on line 43 and exactly 3 expected | Файл /opt/lampp/htdocs/fw.loc/app/models/Product.php | Строка 27
+ ================= 
+ [2018-10-19 17:43:14] | Текст ошибки: Too few arguments to function app\models\Product::getAllByIds(), 1 passed in /opt/lampp/htdocs/fw.loc/app/controllers/CategoryController.php on line 43 and exactly 3 expected | Файл /opt/lampp/htdocs/fw.loc/app/models/Product.php | Строка 27
+ ================= 
+ [2018-10-19 17:43:14] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-19 17:44:02] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-19 17:47:13] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-20 07:49:50] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-20 08:12:38] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-20 08:12:42] | Текст ошибки: Call to undefined method app\models\Category::categoriesId() | Файл /opt/lampp/htdocs/fw.loc/app/models/Category.php | Строка 34
+ ================= 
+ [2018-10-20 08:13:20] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-20 08:13:28] | Текст ошибки: Call to undefined method app\models\Category::categoriesId() | Файл /opt/lampp/htdocs/fw.loc/app/models/Category.php | Строка 34
+ ================= 
+ [2018-10-20 08:21:36] | Текст ошибки: Страница не найдена | Файл /opt/lampp/htdocs/fw.loc/engine/core/Router.php | Строка 124
+ ================= 
+ [2018-10-20 08:25:23] | Текст ошибки: Return value of app\models\Product::getOneById() must be of the type array, object returned | Файл /opt/lampp/htdocs/fw.loc/app/models/Product.php | Строка 24
+ ================= 
+ [2018-10-20 08:26:03] | Текст ошибки: Return value of app\models\Product::getOneById() must be an instance of app\models\Product, instance of stdClass returned | Файл /opt/lampp/htdocs/fw.loc/app/models/Product.php | Строка 24
+ ================= 
  

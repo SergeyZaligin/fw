@@ -21,33 +21,37 @@ class CategoryController extends AppController
     public function indexAction() 
     {
         View::setMeta('Индекс пейдж', "Это описание индекс пейдж", "Это кейвордс");
-
         $modelProduct = new Product();
-        $total = $modelProduct->count();
-        $page = isset(App::$app->request->get['page']) ? (int) App::$app->request->get['page'] : 1;
-        $perPage = 2;
-        $pagination = new Pagination($page, $perPage, $total);
-        $start = $pagination->getStart();
-
-        $id = (int)$this->route['id'];
-        //$products = $modelProduct->getAllByCategoryId($start, $perPage, $id);
-
-        $pr = $modelProduct->get();
-        $pr2 = [];
-        foreach ($pr as $value) {
-            $pr2[$value['id']] = $value;
+        $modelCategory = new Category();
+        
+        if (isset($this->route['id'])) {
+            $id = (int)$this->route['id'];
+        } else {
+            $id = 0;
         }
-
-        $catModels = new Category();
-        $ids = $catModels->categoriesId($pr2, $id);
+        
+        $breadcrumbsArr = $modelCategory->getAllKeysById();
+        $ids = $modelCategory->categoryIds($breadcrumbsArr, $id);
         $ids = !$ids ? $id : rtrim($ids, ',');
-
+        $breadcrumbs = new Breadcrumbs($breadcrumbsArr, $id);
+        
+        
         $products = $modelProduct->getAllByIds($ids);
-
-        //debug($ids);
-        $breadcrumbs = new Breadcrumbs($pr2, $id);
-
-        $this->setData(compact('products', 'pagination', 'breadcrumbs', 'ids'));
+        
+        $total = $modelProduct->count($products);
+        
+        //debug($total);
+        
+        $page = isset(App::$app->request->get['page']) ? (int) App::$app->request->get['page'] : 1;
+        $perPage = 10;
+        $pagination = new Pagination($page, $perPage, $total);
+        
+        $start = $pagination->getStart();
+        
+        $products = $modelProduct->getAllByIdsForPag($ids, $start, $perPage);
+        
+       
+        $this->setData(compact('products', 'pagination', 'breadcrumbs'));
     }
 
 }

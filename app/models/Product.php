@@ -11,8 +11,13 @@ namespace app\models;
 class Product extends AppModel
 {
     
-    
-    public function getOneById($id) 
+    /**
+     * Get one product by id
+     * 
+     * @param int $id
+     * @return array
+     */
+    public function getOneById(int $id)
     {
         return $this->db->query("SELECT * FROM `products` WHERE id=:id LIMIT 1", [
             'id' => $id,
@@ -24,9 +29,34 @@ class Product extends AppModel
         return $this->db->query("SELECT id, title, parent FROM categories", [], \PDO::FETCH_ASSOC);
     }
     
+    public function getAllByIdsForPag($ids, $start, $perPage) 
+    {
+        if ($ids) {
+            return $this->db->query("SELECT * FROM products WHERE parent IN($ids) LIMIT :start, :perPage", [
+                'start' => $start,
+                'perPage' => $perPage
+                    ], \PDO::FETCH_CLASS);
+        } else {
+            return $this->db->query("SELECT * FROM products LIMIT :start, :perPage", [
+                'start' => $start,
+                'perPage' => $perPage
+            ], \PDO::FETCH_CLASS);
+        }
+        
+    }
+    
     public function getAllByIds($ids) 
     {
-        return $this->db->query("SELECT * FROM products WHERE parent IN($ids)", [], \PDO::FETCH_CLASS);
+        if ($ids) {
+            return $this->db->query("SELECT * FROM products WHERE parent IN($ids)", [
+                
+                    ], \PDO::FETCH_CLASS);
+        } else {
+            return $this->db->query("SELECT * FROM products", [
+               
+            ], \PDO::FETCH_CLASS);
+        }
+        
     }
     
     public function getAll($start, $perPage) 
@@ -46,9 +76,15 @@ class Product extends AppModel
         ], \PDO::FETCH_CLASS);
     }
     
-    public function count(): int
+    /**
+     * Get count items
+     * 
+     * @param array $arr
+     * @return int
+     */
+    public function count(array $arr): int
     {
-        return (int)$this->db->query('SELECT COUNT(*) FROM products', [], \PDO::FETCH_COLUMN)[0];
+        return (int) count((array)$arr);
     }
     
     /**

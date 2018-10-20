@@ -91,14 +91,7 @@ class ProductController extends AppController
         
             $this->setData(compact('product', 'breadcrumbs', 'commentsHTML'));
         }
-        
-        
-        
-        //debug($commentsHTML);die;
-        //debug($this->route);die;
-        
-        
-        
+       
     }
 
 }
